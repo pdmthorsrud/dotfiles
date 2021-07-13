@@ -16,6 +16,13 @@ alias vin='vagrant ssh'
 alias cup='git diff HEAD..upstream/master'
 alias upup='git fetch upstream'
 alias rup='git rebase upstream/master'
+alias gl='cd $GITLABDIR'
+alias f2='cd $GITLABDIR/Foundation2Restructured'
+alias l2='cd $GITLABDIR/leveranseteam2'
+alias modules='cd $GITLABDIR/Foundation2Restructured/terraformmodules'
+alias templates='cd $GITLABDIR/Foundation2Restructured/packertemplates'
+alias workspaces='cd $GITLABDIR/Foundation2Restructured/workspaces'
+alias roles='cd $GITLABDIR/Foundation2Restructured/ansibleroles'
 
 # scripts
 alias prov='bash $SCRIPTSDIR/provisioner.sh'
