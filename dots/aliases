@@ -24,6 +24,10 @@ alias templates='cd $GITLABDIR/Foundation2Restructured/packertemplates'
 alias workspaces='cd $GITLABDIR/Foundation2Restructured/workspaces'
 alias roles='cd $GITLABDIR/Foundation2Restructured/ansibleroles'
 alias postgresdb='docker run --name some-postgres -e POSTGRES_PASSWORD= -d -p 5432:5432 postgres'
+alias envoy='sh $SCRIPTSDIR/envoy.sh'
+alias mpsql='sh $SCRIPTSDIR/envoy.sh 5432 master-postgres'
+alias mnetdata='sh $SCRIPTSDIR/envoy.sh 19999 master-postgres-netdata'
+alias cleanenvoy='python3 $SCRIPTSDIR/cleanenvoy.py'
 
 # scripts
 alias prov='bash $SCRIPTSDIR/provisioner.sh'
