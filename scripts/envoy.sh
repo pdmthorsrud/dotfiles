@@ -6,5 +6,5 @@ PORT=$1
 SERVICE=$2
 
 docker run -d -it --name $SERVICE-proxy -p $PORT:$PORT -e CONSUL_HTTP_ADDR=https://10.6.130.90:8501 -e CONSUL_GRPC_ADDR=https://10.6.130.90:8502 gitlab-container-registry.minerva.loc/plattform/foundation/devtools/minerva-envoy-proxy:latest management team2 proxy-$SERVICE-pd $SERVICE $PORT $TOKEN
-mkdir $SCRIPTSDIR/tmp_resources
+mkdir -p $SCRIPTSDIR/tmp_resources
 echo $SERVICE-proxy >> $SCRIPTSDIR/tmp_resources/containers.txt

@@ -1,5 +1,6 @@
 import os
 scriptdir= os.getenv('SCRIPTSDIR')
+filedirpath=f"{scriptdir}/tmp_resources"
 filepath=f"{scriptdir}/tmp_resources/containers.txt"
 
 if not os.path.exists(filepath):
@@ -16,4 +17,7 @@ for line in file:
     os.system(f'docker rm {line}')
     print("")
 
+print(f"Deleting {filepath}")
+print(f"Deleting {filedirpath}")
 os.remove(filepath)
+os.rmdir(filedirpath)
