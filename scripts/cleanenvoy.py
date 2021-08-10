@@ -1,6 +1,6 @@
 import os
 scriptdir= os.getenv('SCRIPTSDIR')
-filepath=f"{scriptdir}/../tmp_resources/containers.txt"
+filepath=f"{scriptdir}/tmp_resources/containers.txt"
 
 if not os.path.exists(filepath):
     print("containers.txt does not exist, quitting")
