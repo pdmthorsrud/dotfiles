@@ -20,7 +20,7 @@ nnoremap j gj
 nnoremap gk k
 nnoremap gj j
 
-" use leader to interact with the system clipboard 
+" use leader to interact with the system clipboard
 noremap <Leader>p "*]p
 noremap <Leader>P "*]P
 noremap <Leader>v "*]p
@@ -33,7 +33,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
- 
+
 " NERDTREE stuff
 nnoremap <Leader>f :NERDTreeToggle<Enter>
 let NERDTreeMinimalUI = 1

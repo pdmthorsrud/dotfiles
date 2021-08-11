@@ -18,6 +18,5 @@ for line in file:
     print("")
 
 print(f"Deleting {filepath}")
-print(f"Deleting {filedirpath}")
 os.remove(filepath)
 os.rmdir(filedirpath)
