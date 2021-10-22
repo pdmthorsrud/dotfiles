@@ -1,4 +1,40 @@
-execute pathogen#infect()
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'junegunn/vim-easy-align'
+Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+Plug 'scrooloose/nerdtree'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-plug'
+Plug 'rizzatti/dash.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'rafi/awesome-vim-colorschemes'
+Plug 'tyrannicaltoucan/vim-quantum'
+Plug 'tpope/vim-fugitive'
+Plug 'sheerun/vim-polyglot'
+Plug 'junegunn/goyo.vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'easymotion/vim-easymotion'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'airblade/vim-gitgutter'
+Plug 'jreybert/vimagit'
+
+call plug#end()
+
+set relativenumber
+set nu rnu
+set foldcolumn=4
+highlight EndOfBuffer ctermfg=black ctermbg=black
+
+set background=dark
+set termguicolors
+colorscheme quantum
+
 
 set encoding=utf-8
 " simple remaps
@@ -6,13 +42,19 @@ noremap <Leader>r :so /home/m88614/.vimrc<Enter>
 let mapleader = " "
 inoremap jk <Esc>
 inoremap <Leader>K gt
-noremap <Leader>w :w<Enter>
-noremap <Leader>e :e $MYVIMRC<Enter>
+noremap <Leader>h :w<Enter>
+noremap \e :e $MYVIMRC<Enter>
+noremap \r :source $MYVIMRC<Enter>
 inoremap <Leader>J gT
+nnoremap <leader>wq <c-w>q
+nnoremap <leader>wv <c-w>v
+nnoremap <leader>ws <c-w>S
+nnoremap <leader>ww <c-w>w
+nnoremap <leader>f :Buffers<CR>
+
 
 map <leader>o o<Esc>k
 map <leader>O O<Esc>j
-" map <leader>w :w<CR>
 nmap <silent> <leader>i "=nr2char(getchar())<cr>P| " allows me to add char at cursor
 " actual visual line navigation
 nnoremap k gk
@@ -35,7 +77,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
 " NERDTREE stuff
-nnoremap <Leader>f :NERDTreeToggle<Enter>
+nnoremap <Leader>t :NERDTreeToggle<Enter>
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
@@ -74,7 +116,7 @@ endfunction
 let wiki_1 = {}
 let wiki_1.path = '~/vimwiki/'
 let wiki_1.syntax = 'markdown'
-let wiki_1.ext = '.md'
+let wiki_1.ext = 'airblade/vim-gitgutter'
 
 let g:vimwiki_list = [wiki_1]
 let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
@@ -82,3 +124,23 @@ let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown'
 set rtp+=~/.fzf
 
 let vim_markdown_preview_github=1
+
+
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'filename', 'modified', 'branch' ] ]
+      \ },
+      \ 'component': {
+      \   'branch': '%{fugitive#head()}'
+      \ },
+      \ }
+
+
+
+function! LightlineReload()
+  call lightline#init()
+  call lightline#colorscheme()
+  call lightline#update()
+endfunction

@@ -1,3 +1,8 @@
+
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the start of this file.
+[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
+#### END FIG ENV VARIABLES ####
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -14,7 +19,7 @@ export PATH="$PATH:/usr/local/go/bin" # add go to path
 export PATH="/usr/local/opt/arm-gcc-bin@8/bin:$PATH" # add gcc to path
 
 # Set name of the theme to load --- "random" loads random theme
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="amuse"
 
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -152,3 +157,24 @@ export SDKMAN_DIR="/home/m88614/.sdkman"
 [[ -s "/home/m88614/.sdkman/bin/sdkman-init.sh" ]] && source "/home/m88614/.sdkman/bin/sdkman-init.sh"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/m88614/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/m88614/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/m88614/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/m88614/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+#### FIG ENV VARIABLES ####
+# Please make sure this block is at the end of this file.
+[ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
+#### END FIG ENV VARIABLES ####

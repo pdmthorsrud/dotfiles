@@ -3,7 +3,8 @@ alias dots='cd $DOTFILESPROJECT'
 alias tf='terraform'
 alias ct='consul-template'
 alias gl='cd $GITLABDIR'
-alias l2='cd $GITLABDIR/leveranseteam2'
+alias l2='cd $GITLABDIR/informasjon_og_analyse/leveranseteam2'
+alias l2v='cd $GITLABDIR/informasjon_og_analyse/leveranseteam2 && vim'
 alias postgresdb='docker run --name some-postgres -e POSTGRES_PASSWORD= -d -p 5432:5432 postgres'
 
 # vagrant-stuff
