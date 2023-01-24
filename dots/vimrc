@@ -9,7 +9,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-easy-align'
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 Plug 'scrooloose/nerdtree'
-Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-plug'
 Plug 'rizzatti/dash.vim'
 Plug 'itchyny/lightline.vim'
@@ -24,6 +23,11 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'jreybert/vimagit'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'cj/vim-webdevicons'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf'
+Plug 'ivanovyordan/dbt.vim'
+
 
 call plug#end()
 
@@ -44,11 +48,11 @@ let mapleader = " "
 inoremap jk <Esc>
 inoremap <Leader>K gt
 noremap <Leader>h :w<Enter>
-noremap \e :e $MYVIMRC<Enter>
-noremap \r :source $MYVIMRC<Enter>
+noremap <Leader>e :e $MYVIMRC<Enter>
+noremap <Leader>r :source $MYVIMRC<Enter>
 inoremap <Leader>J gT
 nnoremap <leader>wq <c-w>q
-nnoremap <leader>wv <c-w>v
+nnoremap <leajer>wv <c-w>v
 nnoremap <leader>ws <c-w>S
 nnoremap <leader>ww <c-w>w
 nnoremap <leader>f :Buffers<CR>

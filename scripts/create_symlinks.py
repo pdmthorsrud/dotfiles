@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 
-load_dotenv("../dots/envfile_mac")
+load_dotenv("../dots/envfile_linux")
 home = os.getenv("HOME")
 dotfilesdir = os.getenv("DOTFILESDIR")
 dotfiles = os.listdir(dotfilesdir)

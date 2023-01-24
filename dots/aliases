@@ -2,9 +2,6 @@
 alias dots='cd $DOTFILESPROJECT'
 alias tf='terraform'
 alias ct='consul-template'
-alias gl='cd $GITLABDIR'
-alias l2='cd $GITLABDIR/informasjon_og_analyse/leveranseteam2'
-alias l2v='cd $GITLABDIR/informasjon_og_analyse/leveranseteam2 && vim'
 alias postgresdb='docker run --name some-postgres -e POSTGRES_PASSWORD= -d -p 5432:5432 postgres'
 
 # vagrant-stuff
@@ -13,18 +10,13 @@ alias vup='vagrant up --provision'
 alias vin='vagrant ssh'
 
 # scripts
-alias prov='bash $SCRIPTSDIR/provisioner.sh'
 alias dev='sh $SCRIPTSDIR/switch_to_develop.sh'
 alias sb='sh $SCRIPTSDIR/switch_to_branches.sh'
 alias br='sh $SCRIPTSDIR/print_branches.sh'
-alias upd='sh $SCRIPTSDIR/update_minerva.sh'
 alias vcom='sh $SCRIPTSDIR/vagrant_command.sh'
-alias envoy='sh $SCRIPTSDIR/envoy.sh'
-alias mpsql='sh $SCRIPTSDIR/envoy.sh 5432 master-postgres'
-alias mnetdata='sh $SCRIPTSDIR/envoy.sh 19999 master-postgres-netdata'
-alias cleanenvoy='python3 $SCRIPTSDIR/cleanenvoy.py'
 
 # git aliases
+alias lg='lazygit'
 alias gp='git push'
 alias gs='git status'
 alias gc='bash $SCRIPTSDIR/gitcommit.sh'
