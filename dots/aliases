@@ -34,3 +34,7 @@ alias dpa='docker ps -a'
 
 # misc
 alias vim='nvim'
+
+# folders
+alias sam='cd ~/projects/stb-damp-sam'
+alias prefect='cd ~/projects/damp-prefect-orchestration'
