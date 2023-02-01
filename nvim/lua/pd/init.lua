@@ -1,0 +1,6 @@
+require('pd.packer')
+require('pd.set')
+require('pd.remap')
+require('pd.nvimtree')
+require('pd.telescope')
+require('pd.lualine')

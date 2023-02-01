@@ -31,3 +31,6 @@ alias rup='git rebase upstream/master'
 alias dl='docker image ls'
 alias dp='docker ps'
 alias dpa='docker ps -a'
+
+# misc
+alias vim='nvim'
