@@ -31,4 +31,4 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "250"
-vim.cmd[[colorscheme nord]]
+vim.cmd[[colorscheme tokyonight]]
