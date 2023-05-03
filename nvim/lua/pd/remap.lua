@@ -2,7 +2,10 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>fas", ":Telescope live_grep use_regex=true search=<CR>")
 vim.keymap.set("n", "<leader>fs", ":Telescope live_grep use_regex=true search_dirs={vim.fn.expand('%:p')} search=<CR>")
-vim.keymap.set("n", "<leader>nt", ":FloatermToggle! cd {vim.fn.expand('%:p:h')}<CR>")
+
+-- floaterm stuff
+vim.keymap.set("n", "<leader>nt", ":FloatermNew! cd '%:p:h'<CR>")
+vim.keymap.set({'n','v','i','t'}, "<F5>", "<C-\\><C-N>:FloatermToggle<CR>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -34,11 +37,6 @@ vim.keymap.set("i", "jk", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")
 
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
-vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
-vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
-
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/pd/packer.lua<CR>");
@@ -53,3 +51,4 @@ vim.keymap.set("n", "<C-p>", vim.cmd.MarkdownPreview)
 
 -- QoL maps
 vim.keymap.set('n', '<leader>w', vim.cmd.write)
+vim.keymap.set('n', '<leader>q', vim.cmd.close)
