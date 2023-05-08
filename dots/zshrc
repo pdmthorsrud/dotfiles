@@ -19,13 +19,14 @@ export PATH="$PATH:/usr/local/go/bin" # add go to path
 export PATH="/usr/local/opt/arm-gcc-bin@8/bin:$PATH" # add gcc to path
 
 # Set name of the theme to load --- "random" loads random theme
-ZSH_THEME="amuse"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(
 	git
 	colored-man-pages
+    virtualenv
 )
 
 

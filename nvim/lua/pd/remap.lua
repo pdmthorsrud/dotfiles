@@ -52,3 +52,6 @@ vim.keymap.set("n", "<C-p>", vim.cmd.MarkdownPreview)
 -- QoL maps
 vim.keymap.set('n', '<leader>w', vim.cmd.write)
 vim.keymap.set('n', '<leader>q', vim.cmd.close)
+
+  -- coment toggle
+vim.keymap.set({'n', 'v'}, '<leader>c', vim.cmd.CommentToggle)

@@ -37,4 +37,4 @@ alias vim='nvim'
 
 # folders
 alias sam='cd ~/projects/stb-damp-sam'
-alias prefect='cd ~/projects/damp-prefect-orchestration'
+alias pre='cd ~/projects/damp-prefect-orchestration'

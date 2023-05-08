@@ -43,7 +43,7 @@ colorscheme quantum
 
 set encoding=utf-8
 " simple remaps
-noremap <Leader>r :so /home/m88614/.vimrc<Enter>
+noremap <Leader>r :luafile /home/pdmthorsrud/.vimrc<Enter>
 let mapleader = " "
 inoremap jk <Esc>
 inoremap <Leader>K gt
@@ -96,60 +96,7 @@ set nocompatible
 filetype plugin on
 syntax on
 
-
-" vimwiki
-let g:vimwiki_list = [
-                        \{'path': '~/Documents/VimWiki/personal.wiki'},
-                        \{'path': '~/Documents/VimWiki/tech.wiki'}
-               \]
-au BufRead,BufNewFile *.wiki set filetype=vimwiki
-
-function! ToggleCalendar()
-  execute ":Calendar"
-  if exists("g:calendar_open")
-    if g:calendar_open == 1
-      execute "q"
-      unlet g:calendar_open
-    else
-      g:calendar_open = 1
-    end
-  else
-    let g:calendar_open = 1
-  end
-endfunction
-:autocmd FileType vimwiki map c :call ToggleCalendar()
-let wiki_1 = {}
-let wiki_1.path = '~/vimwiki/'
-let wiki_1.syntax = 'markdown'
-let wiki_1.ext = 'airblade/vim-gitgutter'
-
-let g:vimwiki_list = [wiki_1]
-let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
-
 set rtp+=~/.fzf
-
-let vim_markdown_preview_github=1
-
-
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'readonly', 'filename', 'modified', 'branch' ] ]
-      \ },
-      \ 'component': {
-      \   'branch': '%{fugitive#head()}'
-      \ },
-      \ }
-
-
-
-function! LightlineReload()
-  call lightline#init()
-  call lightline#colorscheme()
-  call lightline#update()
-endfunction
-
 
 " WSL yank support
 let s:clip = '/mnt/c/Windows/System32/clip.exe'  " change this path according to your mount point
