@@ -99,6 +99,12 @@ _G.packer_plugins = {
     path = "/home/pdmthorsrud/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
+  dbtpal = {
+    config = { "\27LJ\2\nê\3\0\0\b\0\23\00026\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\3\0006\4\4\0009\4\5\0049\4\6\4'\6\a\0B\4\2\2=\4\b\3B\1\2\0016\1\4\0009\1\t\0019\1\n\1'\3\v\0'\4\f\0009\5\r\0B\1\4\0016\1\4\0009\1\t\0019\1\n\1'\3\v\0'\4\14\0009\5\15\0B\1\4\0016\1\4\0009\1\t\0019\1\n\1'\3\v\0'\4\16\0009\5\17\0B\1\4\0016\1\4\0009\1\t\0019\1\n\1'\3\v\0'\4\18\0006\5\0\0'\a\19\0B\5\2\0029\5\20\5B\1\4\0016\1\0\0'\3\21\0B\1\2\0029\1\22\1'\3\1\0B\1\2\1K\0\1\0\19load_extension\14telescope\15dbt_picker\21dbtpal.telescope\15<leader>dm\ttest\16<leader>dtf\frun_all\16<leader>drp\brun\16<leader>drf\6n\bset\vkeymap\29path_to_dbt_profiles_dir\v~/.dbt\vexpand\afn\bvim\1\0\4\24path_to_dbt_project\5\16path_to_dbt\bdbt\27protect_compiled_files\2\25extended_path_search\2\nsetup\vdbtpal\frequire\0" },
+    loaded = true,
+    path = "/home/pdmthorsrud/.local/share/nvim/site/pack/packer/start/dbtpal",
+    url = "https://github.com/PedramNavid/dbtpal"
+  },
   harpoon = {
     loaded = true,
     path = "/home/pdmthorsrud/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -217,6 +223,11 @@ _G.packer_plugins = {
     path = "/home/pdmthorsrud/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
   },
+  ["vim-colddeck"] = {
+    loaded = true,
+    path = "/home/pdmthorsrud/.local/share/nvim/site/pack/packer/start/vim-colddeck",
+    url = "https://github.com/fcpg/vim-colddeck"
+  },
   ["vim-floaterm"] = {
     loaded = true,
     path = "/home/pdmthorsrud/.local/share/nvim/site/pack/packer/start/vim-floaterm",
@@ -226,6 +237,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/pdmthorsrud/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["vim-illuminate"] = {
+    loaded = true,
+    path = "/home/pdmthorsrud/.local/share/nvim/site/pack/packer/start/vim-illuminate",
+    url = "https://github.com/RRethy/vim-illuminate"
   },
   ["zen-mode.nvim"] = {
     loaded = true,
@@ -239,6 +255,10 @@ time([[Defining packer_plugins]], false)
 time([[Setup for markdown-preview.nvim]], true)
 try_loadstring("\27LJ\2\n=\0\0\2\0\4\0\0056\0\0\0009\0\1\0005\1\3\0=\1\2\0K\0\1\0\1\2\0\0\rmarkdown\19mkdp_filetypes\6g\bvim\0", "setup", "markdown-preview.nvim")
 time([[Setup for markdown-preview.nvim]], false)
+-- Config for: dbtpal
+time([[Config for dbtpal]], true)
+try_loadstring("\27LJ\2\nê\3\0\0\b\0\23\00026\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\3\0006\4\4\0009\4\5\0049\4\6\4'\6\a\0B\4\2\2=\4\b\3B\1\2\0016\1\4\0009\1\t\0019\1\n\1'\3\v\0'\4\f\0009\5\r\0B\1\4\0016\1\4\0009\1\t\0019\1\n\1'\3\v\0'\4\14\0009\5\15\0B\1\4\0016\1\4\0009\1\t\0019\1\n\1'\3\v\0'\4\16\0009\5\17\0B\1\4\0016\1\4\0009\1\t\0019\1\n\1'\3\v\0'\4\18\0006\5\0\0'\a\19\0B\5\2\0029\5\20\5B\1\4\0016\1\0\0'\3\21\0B\1\2\0029\1\22\1'\3\1\0B\1\2\1K\0\1\0\19load_extension\14telescope\15dbt_picker\21dbtpal.telescope\15<leader>dm\ttest\16<leader>dtf\frun_all\16<leader>drp\brun\16<leader>drf\6n\bset\vkeymap\29path_to_dbt_profiles_dir\v~/.dbt\vexpand\afn\bvim\1\0\4\24path_to_dbt_project\5\16path_to_dbt\bdbt\27protect_compiled_files\2\25extended_path_search\2\nsetup\vdbtpal\frequire\0", "config", "dbtpal")
+time([[Config for dbtpal]], false)
 -- Config for: nvim-surround
 time([[Config for nvim-surround]], true)
 try_loadstring("\27LJ\2\n?\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\18nvim-surround\frequire\0", "config", "nvim-surround")
