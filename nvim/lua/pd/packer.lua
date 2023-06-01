@@ -28,6 +28,19 @@ return require('packer').startup(function(use)
     use('tpope/vim-fugitive')
     use('voldikss/vim-floaterm')
     use('fcpg/vim-colddeck')
+    use({
+      "princejoogie/dir-telescope.nvim",
+      -- telescope.nvim is a required dependency
+      requires = {"nvim-telescope/telescope.nvim"},
+      config = function()
+        require("dir-telescope").setup({
+          -- these are the default options set
+          hidden = true,
+          no_ignore = false,
+          show_preview = true,
+        })
+      end,
+    })
     use {'PedramNavid/dbtpal',
       config = function()
           local dbt = require('dbtpal')

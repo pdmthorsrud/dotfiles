@@ -55,3 +55,7 @@ vim.keymap.set('n', '<leader>q', vim.cmd.close)
 
   -- coment toggle
 vim.keymap.set({'n', 'v'}, '<leader>c', vim.cmd.CommentToggle)
+
+-- telescope dir
+vim.keymap.set("n", "<leader>fd", "<cmd>Telescope dir live_grep<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>pd", "<cmd>Telescope dir find_files<CR>", { noremap = true, silent = true })
