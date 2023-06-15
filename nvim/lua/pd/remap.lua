@@ -37,7 +37,7 @@ vim.keymap.set("i", "jk", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")
 
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/pd/packer.lua<CR>");
 
@@ -46,12 +46,11 @@ vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/pd/packer.lua<CR>"
 vim.keymap.set("n", "<leader>t", vim.cmd.NvimTreeToggle)
 
 
--- Markdown Preview
-vim.keymap.set("n", "<C-p>", vim.cmd.MarkdownPreview)
-
 -- QoL maps
-vim.keymap.set('n', '<leader>w', vim.cmd.write)
+vim.keymap.set('n', '<leader>w', '<C-w>')
+vim.keymap.set('n', '<leader>ss', vim.cmd.write)
 vim.keymap.set('n', '<leader>q', vim.cmd.close)
+
 
   -- coment toggle
 vim.keymap.set({'n', 'v'}, '<leader>c', vim.cmd.CommentToggle)
@@ -59,3 +58,7 @@ vim.keymap.set({'n', 'v'}, '<leader>c', vim.cmd.CommentToggle)
 -- telescope dir
 vim.keymap.set("n", "<leader>fd", "<cmd>Telescope dir live_grep<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>pd", "<cmd>Telescope dir find_files<CR>", { noremap = true, silent = true })
+
+
+-- jukit stuff
+vim.keymap.set("n", "C-<cr>", "jukit#sendline()<cr>", {})

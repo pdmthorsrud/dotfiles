@@ -28,6 +28,7 @@ return require('packer').startup(function(use)
     use('tpope/vim-fugitive')
     use('voldikss/vim-floaterm')
     use('fcpg/vim-colddeck')
+    -- use('luk400/vim-jukit')
     use({
       "princejoogie/dir-telescope.nvim",
       -- telescope.nvim is a required dependency
