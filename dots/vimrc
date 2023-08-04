@@ -43,16 +43,16 @@ colorscheme quantum
 
 set encoding=utf-8
 " simple remaps
-noremap <Leader>r :luafile /home/pdmthorsrud/.vimrc<Enter>
+noremap <leader>r :luafile /home/pdmthorsrud/.vimrc<Enter>
 let mapleader = " "
 inoremap jk <Esc>
-inoremap <Leader>K gt
-noremap <Leader>h :w<Enter>
-noremap <Leader>e :e $MYVIMRC<Enter>
-noremap <Leader>r :source $MYVIMRC<Enter>
-inoremap <Leader>J gT
+inoremap <leader>K gt
+noremap <leader>h :w<Enter>
+noremap <leader>e :e $MYVIMRC<Enter>
+noremap <leader>r :source $MYVIMRC<Enter>
+inoremap <leader>J gT
 nnoremap <leader>wq <c-w>q
-nnoremap <leajer>wv <c-w>v
+nnoremap <leader>wv <c-w>v
 nnoremap <leader>ws <c-w>S
 nnoremap <leader>ww <c-w>w
 nnoremap <leader>f :Buffers<CR>
@@ -68,10 +68,10 @@ nnoremap gk k
 nnoremap gj j
 
 " use leader to interact with the system clipboard
-noremap <Leader>p "*]p
-noremap <Leader>P "*]P
-noremap <Leader>v "*]p
-noremap <Leader>V "*]P
+noremap <leader>p "*]p
+noremap <leader>P "*]P
+noremap <leader>v "*]p
+noremap <leader>V "*]P
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -82,7 +82,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
 " NERDTREE stuff
-nnoremap <Leader>t :NERDTreeToggle<Enter>
+nnoremap <leader>t :NERDTreeToggle<Enter>
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
