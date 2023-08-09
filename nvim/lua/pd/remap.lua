@@ -16,13 +16,6 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
-vim.keymap.set("n", "<leader>vwm", function()
-    require("vim-with-me").StartVimWithMe()
-end)
-vim.keymap.set("n", "<leader>svwm", function()
-    require("vim-with-me").StopVimWithMe()
-end)
-
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
@@ -56,9 +49,5 @@ vim.keymap.set('n', '<leader>q', vim.cmd.close)
 vim.keymap.set({'n', 'v'}, '<leader>c', vim.cmd.CommentToggle)
 
 -- telescope dir
-vim.keymap.set("n", "<leader>fd", "<cmd>Telescope dir live_grep<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>pd", "<cmd>Telescope dir find_files<CR>", { noremap = true, silent = true })
-
-
--- jukit stuff
-vim.keymap.set("n", "C-<cr>", "jukit#sendline()<cr>", {})
+vim.keymap.set("n", "<leader>fds", "<cmd>Telescope dir live_grep<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>fds", "<cmd>Telescope dir find_files<CR>", { noremap = true, silent = true })

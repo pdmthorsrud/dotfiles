@@ -21,6 +21,10 @@ return require('packer').startup(function(use)
     --        end
     --    })
     --
+    use({
+      'glepnir/zephyr-nvim',
+      requires = { 'nvim-treesitter/nvim-treesitter', opt = true },
+    })
     use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
     use('nvim-treesitter/playground')
     use('theprimeagen/harpoon')
@@ -110,43 +114,42 @@ return require('packer').startup(function(use)
         }
     }
 
-use("folke/zen-mode.nvim")
-use("github/copilot.vim")
-use("RRethy/vim-illuminate")
-use("eandrju/cellular-automaton.nvim")
-use{
-    'nvim-tree/nvim-tree.lua',
-    requires = {
-        'nvim-tree/nvim-web-devicons', -- optional, for file icons
-    },
-    tag = 'nightly' -- optional, updated every week. (see issue #1193)
-}
+  use("folke/zen-mode.nvim")
+  use("RRethy/vim-illuminate")
+  use("eandrju/cellular-automaton.nvim")
+  use{
+      'nvim-tree/nvim-tree.lua',
+      requires = {
+          'nvim-tree/nvim-web-devicons', -- optional, for file icons
+      },
+      tag = 'nightly' -- optional, updated every week. (see issue #1193)
+  }
 
-use 'nvim-tree/nvim-web-devicons'
+  use 'nvim-tree/nvim-web-devicons'
 
-use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
-use 'shaunsingh/nord.nvim'
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+  use 'shaunsingh/nord.nvim'
 
-use({ "kylechui/nvim-surround",
-tag = "*", -- Use for stability; omit to use `main` branch for the latest features
-config = function()
-    require("nvim-surround").setup({
-        -- Configuration here, or leave empty to use defaults
-    })
-end
-    })
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-    }
-    use 'folke/tokyonight.nvim'
-    use 'ggandor/leap.nvim'
-    use {
-        'pwntester/octo.nvim',
-        requires = {
-            'nvim-lua/plenary.nvim',
-            'nvim-telescope/telescope.nvim',
-            'kyazdani42/nvim-web-devicons',
-        }
-    }
-end)
+  use({ "kylechui/nvim-surround",
+    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
+  })
+  use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
+  use 'folke/tokyonight.nvim'
+  use 'ggandor/leap.nvim'
+  use {
+      'pwntester/octo.nvim',
+      requires = {
+          'nvim-lua/plenary.nvim',
+          'nvim-telescope/telescope.nvim',
+          'kyazdani42/nvim-web-devicons',
+      }
+  }
+  end)
