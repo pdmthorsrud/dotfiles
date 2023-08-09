@@ -33,6 +33,8 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/pd/packer.lua<CR>");
+vim.keymap.set("n", "<leader>vpr", "<cmd>e ~/.config/nvim/lua/pd/remap.lua<CR>");
+vim.keymap.set("n", "<leader>rr", "<cmd>luafile ~/.config/nvim/lua/pd/init.lua<CR>");
 
 
 -- Nvim tree stuff
@@ -50,4 +52,4 @@ vim.keymap.set({'n', 'v'}, '<leader>c', vim.cmd.CommentToggle)
 
 -- telescope dir
 vim.keymap.set("n", "<leader>fds", "<cmd>Telescope dir live_grep<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>fds", "<cmd>Telescope dir find_files<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>fdf", "<cmd>Telescope dir find_files<CR>", { noremap = true, silent = true })
