@@ -30,12 +30,14 @@ return require('packer').startup(function(use)
     use('theprimeagen/harpoon')
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
+    use('lewis6991/gitsigns.nvim')
     use('voldikss/vim-floaterm')
     use('fcpg/vim-colddeck')
     use {
       'ruifm/gitlinker.nvim',
       requires = 'nvim-lua/plenary.nvim',
     }
+
 
     -- use('luk400/vim-jukit')
     use({
