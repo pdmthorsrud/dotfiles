@@ -6,40 +6,45 @@ vim.cmd.packadd('packer.nvim')
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
-
+    -- fuzzyfinding whatever you want
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
-
-    --    use({
-    --        'rose-pine/neovim',
-    --        as = 'rose-pine',
-    --        config = function()
-    --            vim.cmd('colorscheme rose-pine')
-    --        end
-    --    })
-    --
+    -- just a normal theme
     use({
       'glepnir/zephyr-nvim',
       requires = { 'nvim-treesitter/nvim-treesitter', opt = true },
     })
+    -- autowrapping
+    use({
+        "andrewferrier/wrapping.nvim",
+        config = function()
+            require("wrapping").setup()
+        end,
+    })
+    -- lsp config
     use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
     use('nvim-treesitter/playground')
+    -- switch quickly between files
     use('theprimeagen/harpoon')
     use('mbbill/undotree')
+    -- run python scripts interactively (like a notebook without using a notebook)
+    use{'dccsillag/magma-nvim', run = ':UpdateRemotePlugins'}
     use('tpope/vim-fugitive')
     use('lewis6991/gitsigns.nvim')
     use('voldikss/vim-floaterm')
+    -- calculation plugin for vim
     use('fcpg/vim-colddeck')
+    use('preservim/vim-markdown')
+    -- yank github links for any file
     use {
       'ruifm/gitlinker.nvim',
       requires = 'nvim-lua/plenary.nvim',
     }
-
-
     -- use('luk400/vim-jukit')
+    -- search specific directories using telescope
     use({
       "princejoogie/dir-telescope.nvim",
       -- telescope.nvim is a required dependency
@@ -53,6 +58,7 @@ return require('packer').startup(function(use)
         })
       end,
     })
+    -- fairly unfinished dbt plugin
     use {'PedramNavid/dbtpal',
       config = function()
           local dbt = require('dbtpal')
@@ -87,14 +93,12 @@ return require('packer').startup(function(use)
           end,
       requires = { { 'nvim-lua/plenary.nvim' }, {'nvim-telescope/telescope.nvim'} }
     }
-    use {
-      'kosayoda/nvim-lightbulb',
-      requires = 'antoinemadec/FixCursorHold.nvim',
-    }
-    use "terrortylor/nvim-comment"
-    require('nvim_comment').setup()
-
-
+    use ({
+      "terrortylor/nvim-comment",
+      config = function()
+          require('nvim_comment').setup()
+        end,
+    })
     use {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',

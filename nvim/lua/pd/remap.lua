@@ -1,4 +1,3 @@
-
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>fas", ":Telescope live_grep use_regex=true search=<CR>")
 vim.keymap.set("n", "<leader>fs", ":Telescope live_grep use_regex=true search_dirs={vim.fn.expand('%:p')} search=<CR>")
@@ -27,6 +26,8 @@ vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 
 -- This is going to get me cancelled
 vim.keymap.set("i", "jk", "<Esc>")
+vim.keymap.set("n", "j", "gj")
+vim.keymap.set("n", "k", "gk")
 
 vim.keymap.set("n", "Q", "<nop>")
 
@@ -34,7 +35,7 @@ vim.keymap.set("n", "<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left>
 
 vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/pd/packer.lua<CR>");
 vim.keymap.set("n", "<leader>vpr", "<cmd>e ~/.config/nvim/lua/pd/remap.lua<CR>");
-vim.keymap.set("n", "<leader>rr", "<cmd>luafile ~/.config/nvim/lua/pd/init.lua<CR>");
+vim.keymap.set("n", "<leader>jr", "<cmd>luafile ~/.config/nvim/lua/pd/init.lua<CR>");
 
 
 -- Nvim tree stuff
