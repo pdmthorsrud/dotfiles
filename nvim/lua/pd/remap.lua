@@ -48,9 +48,26 @@ vim.keymap.set('n', '<leader>ss', vim.cmd.write)
 vim.keymap.set('n', '<leader>q', vim.cmd.close)
 
 
-  -- coment toggle
+-- comment toggle
 vim.keymap.set({'n', 'v'}, '<leader>c', vim.cmd.CommentToggle)
 
 -- telescope dir
 vim.keymap.set("n", "<leader>fds", "<cmd>Telescope dir live_grep<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>fdf", "<cmd>Telescope dir find_files<CR>", { noremap = true, silent = true })
+
+
+-- remap <leader>ss to save file
+vim.keymap.set("n", "<leader>ss", ":w<CR>")
+
+
+-- remap <leader>lr to reload lua config
+vim.keymap.set("n", "<leader>lr", ":luafile ~/.config/nvim/lua/pd/init.lua<CR>")
+
+
+-- magma python scripts rewriting all lines above
+vim.keymap.set("n", "<leader>r", ":MagnaEvaluateOperator<CR>")
+vim.keymap.set("n", "<leader>rr", ":MagmaEvaluateLine<CR>")
+vim.keymap.set({'v'}, "<leader>r", ":<C-u>MagmaEvaluateVisual<CR>")
+vim.keymap.set("n", "<leader>rc", ":MagmaReevaluateCell<CR>")
+vim.keymap.set("n", "<leader>rd", ":MagmaDelete<CR>")
+vim.keymap.set("n", "<leader>ro", ":MagmaShowOutput<CR>")

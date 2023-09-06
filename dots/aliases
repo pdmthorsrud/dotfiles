@@ -38,3 +38,5 @@ alias vim='nvim'
 # folders
 alias sam='cd ~/projects/stb-damp-sam'
 alias pre='cd ~/projects/damp-prefect-orchestration'
+
+alias tmp='cd ~/tmp_SAFE_TO_DELETE'

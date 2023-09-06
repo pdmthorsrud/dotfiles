@@ -3,7 +3,12 @@
 -- Only required if you have packer configured as `opt`
 vim.cmd.packadd('packer.nvim')
 
+
 return require('packer').startup(function(use)
+    use "~/dbt_compile"
+    use "github/copilot.vim"
+    -- indentation guidelines
+    use "lukas-reineke/indent-blankline.nvim"
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
     -- fuzzyfinding whatever you want
@@ -76,7 +81,7 @@ return require('packer').startup(function(use)
             -- Search for ref/source files in macros and models folders
             extended_path_search = true,
 
-            -- Prevent modifying sql files in target/(compiled|run) folders
+            -- prevent modifying sql files in target/(compiled|run) folders
             protect_compiled_files = true
 
           }
@@ -116,7 +121,8 @@ return require('packer').startup(function(use)
                 -- Autocompletion
             {'hrsh7th/nvim-cmp'},     -- Required
             {'hrsh7th/cmp-nvim-lsp'}, -- Required
-            {'L3MON4D3/LuaSnip'},     -- Required
+            {'SirVer/ultisnips'},     -- Required
+            {'quangnguyen30192/cmp-nvim-ultisnips'}     -- Required
         }
     }
 

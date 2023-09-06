@@ -33,3 +33,6 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "250"
 vim.cmd [[colorscheme zephyr]]
+
+-- set a lua global variable for neovim
+vim.g.magma_automatically_open_output = false
