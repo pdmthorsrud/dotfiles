@@ -75,7 +75,7 @@ vim.keymap.set("n", "<leader>ro", ":MagmaShowOutput<CR>")
 -- file browser mappings
 vim.api.nvim_set_keymap(
   "n",
-  "<space>fb",
+  "<space>ff",
   ":Telescope file_browser<CR>",
   { noremap = true }
 )
