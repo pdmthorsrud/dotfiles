@@ -1,4 +1,3 @@
-vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>fas", ":Telescope live_grep use_regex=true search=<CR>")
 vim.keymap.set("n", "<leader>fs", ":Telescope live_grep use_regex=true search_dirs={vim.fn.expand('%:p')} search=<CR>")
 
@@ -71,3 +70,12 @@ vim.keymap.set({'v'}, "<leader>r", ":<C-u>MagmaEvaluateVisual<CR>")
 vim.keymap.set("n", "<leader>rc", ":MagmaReevaluateCell<CR>")
 vim.keymap.set("n", "<leader>rd", ":MagmaDelete<CR>")
 vim.keymap.set("n", "<leader>ro", ":MagmaShowOutput<CR>")
+
+
+-- file browser mappings
+vim.api.nvim_set_keymap(
+  "n",
+  "<space>fb",
+  ":Telescope file_browser<CR>",
+  { noremap = true }
+)

@@ -3,21 +3,20 @@ return {
 	"folke/which-key.nvim",
 	"github/copilot.vim",
 	"lukas-reineke/indent-blankline.nvim",
-	'nvim-telescope/telescope.nvim',
 	'nvim-lua/plenary.nvim',
 	'glepnir/zephyr-nvim',
 	"github/copilot.vim",
 	    -- indentation guidelines
 	"lukas-reineke/indent-blankline.nvim",
-	      'glepnir/zephyr-nvim',
-	    -- fuzzyfinding whatever you want
-	    {'nvim-telescope/telescope.nvim', tag = '0.1.2', dependencies = { 'nvim-lua/plenary.nvim' }},
-	      {
-		"andrewferrier/wrapping.nvim",
-		config = function()
-		    require("wrapping").setup()
-		end
-	    },
+    'glepnir/zephyr-nvim',
+    -- fuzzyfinding whatever you want
+    {'nvim-telescope/telescope.nvim', tag = '0.1.2', dependencies = { 'nvim-lua/plenary.nvim' }},
+    {
+    "andrewferrier/wrapping.nvim",
+    config = function()
+        require("wrapping").setup()
+    end
+    },
 	    -- lsp config
 	    {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'},
 	'nvim-treesitter/playground',
@@ -104,18 +103,6 @@ end
       },
 	"folke/zen-mode.nvim",
 	"eandrju/cellular-automaton.nvim",
-	{
-	  "nvim-tree/nvim-tree.lua",
-	  version = "*",
-	  lazy = false,
-	  dependencies = {
-	    "nvim-tree/nvim-web-devicons",
-	  },
-	  config = function()
-	    require("nvim-tree").setup {}
-	  end,
-	},
-	'nvim-tree/nvim-web-devicons',
 	'shaunsingh/nord.nvim',
 	{
 	    "kylechui/nvim-surround",
@@ -128,7 +115,11 @@ end
 	    end
 	},
 	'nvim-lualine/lualine.nvim',
-	'nvim-tree/nvim-web-devicons',
 	'folke/tokyonight.nvim',
+    --lazy
+    {
+        "nvim-telescope/telescope-file-browser.nvim",
+        dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+    },
 	'ggandor/leap.nvim'
 }
