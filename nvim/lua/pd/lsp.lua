@@ -6,10 +6,10 @@ lsp.on_attach(function(client, bufnr)
   lsp.default_keymaps({buffer = bufnr})
 end)
 
-lsp.ensure_installed({
-    'tsserver',
-    'eslint'
-})
+--lsp.ensure_installed({
+--    'tsserver',
+--    'eslint'
+--})
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}

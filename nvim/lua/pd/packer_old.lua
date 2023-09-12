@@ -9,8 +9,6 @@ return require('packer').startup(function(use)
     use "github/copilot.vim"
     -- indentation guidelines
     use "lukas-reineke/indent-blankline.nvim"
-    -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
     -- fuzzyfinding whatever you want
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
@@ -34,6 +32,8 @@ return require('packer').startup(function(use)
     use('nvim-treesitter/playground')
     -- switch quickly between files
     use('theprimeagen/harpoon')
+    -- zettelkasten plugin
+    use("mickael-menu/zk-nvim")
     use('mbbill/undotree')
     -- run python scripts interactively (like a notebook without using a notebook)
     use{'dccsillag/magma-nvim', run = ':UpdateRemotePlugins'}
