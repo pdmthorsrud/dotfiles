@@ -121,5 +121,13 @@ end
         "nvim-telescope/telescope-file-browser.nvim",
         dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
     },
+    {
+        "mickael-menu/zk-nvim",
+        config = function()
+        require("zk").setup({
+          -- See Setup section below
+        })
+        end
+    },
 	'ggandor/leap.nvim'
 }
