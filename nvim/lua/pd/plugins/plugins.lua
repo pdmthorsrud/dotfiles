@@ -6,9 +6,19 @@ return {
 	'nvim-lua/plenary.nvim',
 	'glepnir/zephyr-nvim',
 	"github/copilot.vim",
+    "ms-jpq/chadtree",
 	    -- indentation guidelines
 	"lukas-reineke/indent-blankline.nvim",
     'glepnir/zephyr-nvim',
+    {
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+        dependencies = {
+          "nvim-lua/plenary.nvim",
+          "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+          "MunifTanjim/nui.nvim",
+        }
+    },
     -- fuzzyfinding whatever you want
     {'nvim-telescope/telescope.nvim', tag = '0.1.2', dependencies = { 'nvim-lua/plenary.nvim' }},
     {
