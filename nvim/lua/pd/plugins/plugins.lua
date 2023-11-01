@@ -7,7 +7,7 @@ return {
 	'glepnir/zephyr-nvim',
 	"github/copilot.vim",
     "ms-jpq/chadtree",
-	    -- indentation guidelines
+    -- indentation guidelines
 	"lukas-reineke/indent-blankline.nvim",
     'glepnir/zephyr-nvim',
     {
