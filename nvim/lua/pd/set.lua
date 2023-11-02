@@ -28,11 +28,12 @@ vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
+vim.opt.fillchars = {eob = " "}
 
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "250"
-vim.cmd [[colorscheme zephyr]]
+vim.cmd [[colorscheme rose-pine]]
 
 -- set a lua global variable for neovim
 vim.g.magma_automatically_open_output = false

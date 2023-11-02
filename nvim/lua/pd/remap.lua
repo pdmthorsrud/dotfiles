@@ -38,7 +38,7 @@ vim.keymap.set("n", "<leader>jr", "<cmd>luafile ~/.config/nvim/lua/pd/init.lua<C
 
 
 -- Nvim tree stuff
-vim.keymap.set("n", "<leader>t", vim.cmd.CHADopen)
+vim.keymap.set("n", "<leader>t", vim.cmd.NERDTreeToggle)
 
 
 -- QoL maps

@@ -187,4 +187,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
+# You can use whatever you want as an alias, like for Mondays:
+eval $(thefuck --alias fuck)
+
 cd ~/
