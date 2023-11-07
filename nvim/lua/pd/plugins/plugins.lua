@@ -27,6 +27,28 @@ return {
             require('mini.pairs').setup()
         end
     },
+    {
+      "princejoogie/dir-telescope.nvim",
+      -- telescope.nvim is a required dependency
+      requires = {"nvim-telescope/telescope.nvim"},
+      config = function()
+        require("dir-telescope").setup({
+          -- these are the default options set
+          hidden = true,
+          no_ignore = false,
+          show_preview = true,
+        })
+      end,
+    },
+    {
+        'echasnovski/mini.starter', version = '*', -- Use for stability; omit to use `main` branch for the latest features
+        config = function ()
+            require('mini.starter').setup()
+        end
+    },
+    {
+        'gen740/SmoothCursor.nvim',
+    },
     "folke/which-key.nvim",
     "github/copilot.vim",
     "lukas-reineke/indent-blankline.nvim",
