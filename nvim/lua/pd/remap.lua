@@ -1,6 +1,9 @@
 vim.keymap.set("n", "<leader>fas", ":Telescope live_grep use_regex=true search=<CR>")
 vim.keymap.set("n", "<leader>fs", ":Telescope live_grep use_regex=true search_dirs={vim.fn.expand('%:p')} search=<CR>")
 
+vim.keymap.set("n", "<leader>o", "o<Esc>k")
+vim.keymap.set("n", "<leader>O", "O<Esc>j")
+
 -- floaterm stuff
 vim.keymap.set("n", "<leader>nt", ":FloatermNew! cd '%:p:h'<CR>")
 vim.keymap.set({'n','v','i','t'}, "<F5>", "<C-\\><C-N>:FloatermToggle<CR>")
