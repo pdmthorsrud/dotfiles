@@ -1,6 +1,7 @@
 return {
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
     "folke/neodev.nvim",
+    'ruifm/gitlinker.nvim',
     {'romgrk/barbar.nvim',
         dependencies = {
             'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
