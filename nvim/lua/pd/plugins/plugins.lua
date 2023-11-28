@@ -2,6 +2,10 @@ return {
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
     "folke/neodev.nvim",
     'ruifm/gitlinker.nvim',
+    -- github version, the one below is for development
+    --'pdmthorsrud/dbt.nvim',
+    { dir = '/home/pdmthorsrud/projects/dbt.nvim', lazy = false },
+    { dir = '/home/pdmthorsrud/projects/test_stuff', lazy = false },
     {'romgrk/barbar.nvim',
         dependencies = {
             'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
@@ -56,7 +60,8 @@ return {
     'nvim-lua/plenary.nvim',
     'glepnir/zephyr-nvim',
     "github/copilot.vim",
-    'preservim/nerdtree',
+    --'preservim/nerdtree',
+    'nvim-tree/nvim-tree.lua',
     "nvim-tree/nvim-web-devicons",
     'glepnir/zephyr-nvim',
     { 'rose-pine/neovim', name = 'rose-pine' },
