@@ -43,7 +43,7 @@ vim.keymap.set("n", "<leader>jr", "<cmd>luafile ~/.config/nvim/lua/pd/init.lua<C
 
 
 -- Nvim tree stuff
-vim.keymap.set("n", "<leader>t", vim.cmd.NERDTreeToggle)
+vim.keymap.set("n", "<leader>t", vim.cmd.NvimTreeToggle)
 
 
 -- QoL maps
@@ -53,7 +53,8 @@ vim.keymap.set('n', '<leader>q', vim.cmd.close)
 
 
 -- comment toggle
-vim.keymap.set({'n', 'v'}, '<leader>c', vim.cmd.CommentToggle)
+vim.keymap.set({'n'}, '<leader>c', vim.cmd.CommentToggle)
+vim.keymap.set({'v'}, '<leader>c', ":'<,'>CommentToggle<CR>")
 
 -- telescope dir
 vim.keymap.set("n", "<leader>fds", "<cmd>Telescope dir live_grep<CR>", { noremap = true, silent = true })

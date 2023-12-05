@@ -5,7 +5,6 @@ return {
     -- github version, the one below is for development
     --'pdmthorsrud/dbt.nvim',
     { dir = '/home/pdmthorsrud/projects/dbt.nvim', lazy = false },
-    { dir = '/home/pdmthorsrud/projects/test_stuff', lazy = false },
     {'romgrk/barbar.nvim',
         dependencies = {
             'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
@@ -61,7 +60,11 @@ return {
     'glepnir/zephyr-nvim',
     "github/copilot.vim",
     --'preservim/nerdtree',
-    'nvim-tree/nvim-tree.lua',
+    {'nvim-tree/nvim-tree.lua',
+        config = function()
+            require("nvim-tree").setup()
+        end
+    },
     "nvim-tree/nvim-web-devicons",
     'glepnir/zephyr-nvim',
     { 'rose-pine/neovim', name = 'rose-pine' },
@@ -88,8 +91,12 @@ return {
     'voldikss/vim-floaterm',
     -- calculation plugin for vim
     'fcpg/vim-colddeck',
-    'preservim/vim-markdown',
-    "terrortylor/nvim-comment",
+    --'preservim/vim-markdown',
+    {"terrortylor/nvim-comment",
+        config = function()
+            require('nvim_comment').setup()
+        end
+    },
     {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',

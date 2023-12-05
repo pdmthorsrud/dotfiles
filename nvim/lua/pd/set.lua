@@ -37,3 +37,5 @@ vim.cmd [[colorscheme rose-pine]]
 
 -- set a lua global variable for neovim
 vim.g.magma_automatically_open_output = false
+vim.g.floaterm_height = 0.85
+vim.g.floaterm_width = 0.85
