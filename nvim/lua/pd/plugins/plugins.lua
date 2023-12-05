@@ -1,7 +1,7 @@
 return {
     "folke/neodev.nvim",
     'ruifm/gitlinker.nvim',
-    { dir = "Users/melvin/projects/nvim_plugins/dbt" },
+    -- { dir = "Users/melvin/projects/nvim_plugins/dbt" },
     { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
     {'romgrk/barbar.nvim',
         dependencies = {
