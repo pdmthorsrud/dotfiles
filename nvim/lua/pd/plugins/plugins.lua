@@ -1,10 +1,8 @@
 return {
-    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
     "folke/neodev.nvim",
     'ruifm/gitlinker.nvim',
-    -- github version, the one below is for development
-    --'pdmthorsrud/dbt.nvim',
-    { dir = '/home/pdmthorsrud/projects/dbt.nvim', lazy = false },
+    { dir = "Users/melvin/projects/nvim_plugins/dbt" },
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
     {'romgrk/barbar.nvim',
         dependencies = {
             'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
