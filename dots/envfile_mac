@@ -1,5 +1,5 @@
 # Variables
-BASE="/Users/m88614/projects"
+BASE="/Users/pdmthor/projects"
 export DOTFILESPROJECT="${BASE}/dotfiles" # where this repo is stored
 export DOTFILESDIR="${BASE}/dotfiles/dots" # same as above, but to the dotfiles
 export SCRIPTSDIR="${BASE}/dotfiles/scripts" # same as above, but to the scripts

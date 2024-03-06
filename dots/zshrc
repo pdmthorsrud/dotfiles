@@ -180,14 +180,8 @@ unset __conda_setup
 [ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
 #### END FIG ENV VARIABLES ####
 
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/doc/fzf/examples/completion.zsh
+source /Users/pdmthor/.fzf.zsh
 
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-# You can use whatever you want as an alias, like for Mondays:
-eval $(thefuck --alias fuck)
+export REQUESTS_CA_BUNDLE="$HOME/.mac-ca-roots"
 
 cd ~/
