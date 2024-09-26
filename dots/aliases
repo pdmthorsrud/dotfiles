@@ -1,0 +1,25 @@
+alias dots='cd $DOTFILESPROJECT'
+
+# scripts
+alias dev='sh $SCRIPTSDIR/switch_to_develop.sh'
+alias sb='sh $SCRIPTSDIR/switch_to_branches.sh'
+alias br='sh $SCRIPTSDIR/print_branches.sh'
+alias vcom='sh $SCRIPTSDIR/vagrant_command.sh'
+
+# git aliases
+alias lg='lazygit'
+alias gp='git push'
+alias gs='git status'
+alias gc='bash $SCRIPTSDIR/gitcommit.sh'
+alias ga='git add -A'
+alias fbr='bash $SCRIPTSDIR/fbr.sh'
+alias main='git switch main'
+alias cup='git diff HEAD..upstream/master'
+alias upup='git fetch upstream'
+alias rup='git rebase upstream/master'
+
+# misc
+alias vim='nvim'
+
+alias tmp='cd ~/tmp_SAFE_TO_DELETE'
+alias python='python3'

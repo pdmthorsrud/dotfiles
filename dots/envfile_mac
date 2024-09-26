@@ -1,0 +1,6 @@
+# Variables
+BASE="/Users/melvin/projects"
+export DOTFILESPROJECT="${BASE}/dotfiles" # where this repo is stored
+export DOTFILESDIR="${BASE}/dotfiles/dots" # same as above, but to the dotfiles
+export SCRIPTSDIR="${BASE}/dotfiles/scripts" # same as above, but to the scripts
+export GITLABDIR="${BASE}/gitlab"
