@@ -1,5 +1,3 @@
-vim.opt.ff = unix
-
 vim.opt.guicursor = ""
 
 vim.opt.nu = true
