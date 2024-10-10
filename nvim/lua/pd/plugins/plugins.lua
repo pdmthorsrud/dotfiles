@@ -210,5 +210,5 @@ return {
             })
         end
     },
-    'ggandor/leap.nvim'
+    { 'ggandor/leap.nvim', lazy = false }
 }
