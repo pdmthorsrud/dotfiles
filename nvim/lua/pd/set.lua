@@ -33,7 +33,7 @@ vim.opt.fillchars = {eob = " "}
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "250"
-vim.cmd [[colorscheme rose-pine]]
+vim.cmd [[colorscheme tokyonight-moon]]
 
 -- set a lua global variable for neovim
 vim.g.magma_automatically_open_output = false

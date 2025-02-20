@@ -1,8 +1,49 @@
 return {
+    {
+        "nvim-neorg/neorg",
+        lazy = false,
+        version = "*",
+        config = function()
+            require("neorg").setup {
+                load = {
+                    ["core.defaults"] = {},
+                    ["core.concealer"] = {},
+                    ["core.dirman"] = {
+                        config = {
+                            workspaces = {
+                                notes = "~/projects/notes",
+                            },
+                            default_workspace = "notes",
+                        },
+                    },
+                },
+            }
+
+            vim.wo.foldlevel = 99
+            vim.wo.conceallevel = 2
+        end,
+    },
     "folke/neodev.nvim",
     'ruifm/gitlinker.nvim',
+    'hlucco/nvim-eswpoch',
     { dir = "home/pdmthorsrud/projects/nvim_plugins/dbt", lazy = false },
-    { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+    -- disabled because of dashbaord plugin
+    -- {
+    --     "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} ,
+    --     cond = function()
+    --         return not string.match(vim.fn.fnamemodify(vim.fn.bufname("%"), ":t"), ".*%dashboard")
+    --     end,
+    -- },
+    {
+        'goolord/alpha-nvim',
+        dependencies = {
+            'echasnovski/mini.icons',
+            'nvim-lua/plenary.nvim'
+        },
+        config = function ()
+            require'alpha'.setup(require'alpha.themes.theta'.config)
+        end
+    },
     {'romgrk/barbar.nvim',
         dependencies = {
             'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
@@ -17,12 +58,12 @@ return {
         },
         version = '^1.0.0', -- optional: only update when a new 1.x version is released
     },
-    {
-        'echasnovski/mini.trailspace', version = '*', -- Use for stability; omit to use `main` branch for the latest features
-        config = function ()
-            require('mini.trailspace').setup()
-        end
-    },
+    -- {
+    --     'echasnovski/mini.trailspace', version = '*', -- Use for stability; omit to use `main` branch for the latest features
+    --     config = function ()
+    --         require('mini.trailspace').setup()
+    --     end
+    -- },
     {
         'echasnovski/mini.pairs', version = '*', -- Use for stability; omit to use `main` branch for the latest features
         config = function ()
@@ -43,17 +84,10 @@ return {
       end,
     },
     {
-        'echasnovski/mini.starter', version = '*', -- Use for stability; omit to use `main` branch for the latest features
-        config = function ()
-            require('mini.starter').setup()
-        end
-    },
-    {
         'gen740/SmoothCursor.nvim',
     },
     "folke/which-key.nvim",
     "github/copilot.vim",
-    "lukas-reineke/indent-blankline.nvim",
     'nvim-lua/plenary.nvim',
     'glepnir/zephyr-nvim',
     "github/copilot.vim",
@@ -78,7 +112,11 @@ return {
     {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'},
     'nvim-treesitter/playground',
     -- switch quickly between files
-    'theprimeagen/harpoon',
+    {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        dependencies = { "nvim-lua/plenary.nvim" }
+    },
     -- zettelkasten plugin
     "mickael-menu/zk-nvim",
     'mbbill/undotree',
@@ -121,6 +159,7 @@ return {
         event = 'InsertEnter',
         dependencies = {
             {'L3MON4D3/LuaSnip'},
+            {"rafamadriz/friendly-snippets"},
         },
         config = function()
             -- Here is where you configure the autocompletion settings.
