@@ -31,7 +31,12 @@ return require('packer').startup(function(use)
     use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
     use('nvim-treesitter/playground')
     -- switch quickly between files
-    use('theprimeagen/harpoon')
+    use(
+        {
+            'theprimeagen/harpoon',
+            branch = 'harpoon2'
+        }
+    )
     -- zettelkasten plugin
     use("mickael-menu/zk-nvim")
     use('mbbill/undotree')

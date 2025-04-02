@@ -1,6 +1,13 @@
 return {
     {
         "nvim-neorg/neorg",
+        opts = {
+            load = {
+                ["core.defaults"] = {},
+                ["core.integrations.telescope"] = {},
+            },
+        },
+        dependencies = { { "nvim-lua/plenary.nvim" }, { "nvim-neorg/neorg-telescope" } },
         lazy = false,
         version = "*",
         config = function()
@@ -26,7 +33,6 @@ return {
     "folke/neodev.nvim",
     'ruifm/gitlinker.nvim',
     'hlucco/nvim-eswpoch',
-    { dir = "home/pdmthorsrud/projects/nvim_plugins/dbt", lazy = false },
     -- disabled because of dashbaord plugin
     -- {
     --     "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} ,
@@ -209,7 +215,16 @@ return {
             lsp.setup()
         end
     },
-    "folke/zen-mode.nvim",
+    {
+        "folke/zen-mode.nvim",
+        config = function()
+            require("zen-mode").setup({
+                window = {
+                    width = .65 -- width will be 85% of the editor width
+                }
+            })
+        end
+    },
     "eandrju/cellular-automaton.nvim",
     'shaunsingh/nord.nvim',
     {

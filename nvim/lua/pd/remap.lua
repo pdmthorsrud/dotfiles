@@ -85,3 +85,6 @@ vim.api.nvim_set_keymap(
   ":Telescope file_browser<CR>",
   { noremap = true }
 )
+
+
+vim.keymap.set("n", "<leader>ln", ":Neorg index<CR>")
