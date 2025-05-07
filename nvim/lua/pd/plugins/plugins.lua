@@ -256,6 +256,7 @@ return {
         "nvim-telescope/telescope-file-browser.nvim",
         dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
     },
+    'luukvbaal/nnn.nvim',
     {
         "mickael-menu/zk-nvim",
         config = function()
