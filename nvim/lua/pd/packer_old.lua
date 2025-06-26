@@ -38,7 +38,6 @@ return require('packer').startup(function(use)
         }
     )
     -- zettelkasten plugin
-    use("mickael-menu/zk-nvim")
     use('mbbill/undotree')
     -- run python scripts interactively (like a notebook without using a notebook)
     use{'dccsillag/magma-nvim', run = ':UpdateRemotePlugins'}

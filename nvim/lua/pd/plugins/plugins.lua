@@ -93,10 +93,9 @@ return {
         'gen740/SmoothCursor.nvim',
     },
     "folke/which-key.nvim",
-    "github/copilot.vim",
+    -- "github/copilot.vim",
     'nvim-lua/plenary.nvim',
     'glepnir/zephyr-nvim',
-    "github/copilot.vim",
     --'preservim/nerdtree',
     {'nvim-tree/nvim-tree.lua',
         config = function()
@@ -124,7 +123,6 @@ return {
         dependencies = { "nvim-lua/plenary.nvim" }
     },
     -- zettelkasten plugin
-    "mickael-menu/zk-nvim",
     'mbbill/undotree',
     -- run python scripts interactively (like a notebook without using a notebook)
     {
@@ -255,15 +253,6 @@ return {
     {
         "nvim-telescope/telescope-file-browser.nvim",
         dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
-    },
-    'luukvbaal/nnn.nvim',
-    {
-        "mickael-menu/zk-nvim",
-        config = function()
-            require("zk").setup({
-                -- See Setup section below
-            })
-        end
     },
     'ggandor/leap.nvim'
 }
