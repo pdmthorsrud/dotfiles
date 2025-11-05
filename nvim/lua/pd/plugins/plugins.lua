@@ -33,7 +33,55 @@ return {
     "folke/neodev.nvim",
     'ruifm/gitlinker.nvim',
     'hlucco/nvim-eswpoch',
-    -- disabled because of dashbaord plugin
+    {
+        "folke/snacks.nvim",
+        priority = 1000,
+        lazy = false,
+        ---@type snacks.Config
+        opts = {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+            bigfile = { enabled = true },
+            dashboard = { enabled = true },
+            explorer = { enabled = true },
+            indent = { enabled = true },
+            input = { enabled = true },
+            picker = { enabled = true },
+            notifier = { enabled = true },
+            quickfile = { enabled = true },
+            scope = { enabled = true },
+            scroll = { enabled = true },
+            statuscolumn = { enabled = true },
+            words = { enabled = true },
+        },
+    },
+    {
+	    "obsidian-nvim/obsidian.nvim",
+	    version = "*", -- recommended, use latest release instead of latest commit
+	    ft = "markdown",
+	    -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
+	    -- event = {
+		    --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
+		    --   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/*.md"
+		    --   -- refer to `:h file-pattern` for more examples
+		    --   "BufReadPre path/to/my-vault/*.md",
+		    --   "BufNewFile path/to/my-vault/*.md",
+		    -- },
+		    ---@module 'obsidian'
+		    ---@type obsidian.config
+		    opts = {
+			    workspaces = {
+				    {
+					    name = "personal",
+					    path = "~/projects/notes/obsidian_notes/",
+				    }
+			    },
+
+			    -- see below for full list of options 👇
+		    },
+	    },
+	    -- disabled because of dashbaord plugin
     -- {
     --     "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} ,
     --     cond = function()
@@ -163,11 +211,14 @@ return {
         event = 'InsertEnter',
         dependencies = {
             {'L3MON4D3/LuaSnip'},
+            {'saadparwaiz1/cmp_luasnip'},
+            {'hrsh7th/cmp-buffer'},
+            {'hrsh7th/cmp-path'},
             {"rafamadriz/friendly-snippets"},
         },
         config = function()
             -- Here is where you configure the autocompletion settings.
-            -- The arguments for .extend() have the same shape as `manage_nvim_cmp`: 
+            -- The arguments for .extend() have the same shape as `manage_nvim_cmp`:
             -- https://github.com/VonHeikemen/lsp-zero.nvim/blob/v2.x/doc/md/api-reference.md#manage_nvim_cmp
 
             require('lsp-zero.cmp').extend()
@@ -175,12 +226,47 @@ return {
             -- And you can configure cmp even more, if you want to.
             local cmp = require('cmp')
             local cmp_action = require('lsp-zero.cmp').action()
+            local luasnip = require('luasnip')
 
             cmp.setup({
+                snippet = {
+                    expand = function(args)
+                        luasnip.lsp_expand(args.body)
+                    end,
+                },
+                completion = {
+                    completeopt = 'menu,menuone,noinsert',
+                },
+                preselect = cmp.PreselectMode.Item,
+                sources = {
+                    {name = 'nvim_lsp'},
+                    {name = 'luasnip'},
+                    {name = 'buffer'},
+                    {name = 'path'},
+                },
                 mapping = {
                     ['<C-Space>'] = cmp.mapping.complete(),
                     ['<C-f>'] = cmp_action.luasnip_jump_forward(),
                     ['<C-b>'] = cmp_action.luasnip_jump_backward(),
+                    ['<CR>'] = cmp.mapping.confirm({select = true}),
+                    ['<Tab>'] = cmp.mapping(function(fallback)
+                        if cmp.visible() then
+                            cmp.select_next_item()
+                        elseif luasnip.expand_or_jumpable() then
+                            luasnip.expand_or_jump()
+                        else
+                            fallback()
+                        end
+                    end, {'i', 's'}),
+                    ['<S-Tab>'] = cmp.mapping(function(fallback)
+                        if cmp.visible() then
+                            cmp.select_prev_item()
+                        elseif luasnip.jumpable(-1) then
+                            luasnip.jump(-1)
+                        else
+                            fallback()
+                        end
+                    end, {'i', 's'}),
                 }
             })
         end

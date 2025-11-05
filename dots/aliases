@@ -23,3 +23,6 @@ alias vim='nvim'
 
 alias tmp='cd ~/tmp_SAFE_TO_DELETE'
 alias python='python3'
+
+alias sub='cd ~/projects/substrate_experiments/'
+alias buse='cd ~/projects/substrate_experiments/substrate_computer_use_browser_use_integration/'

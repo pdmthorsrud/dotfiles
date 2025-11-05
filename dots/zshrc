@@ -22,7 +22,7 @@ export PATH="/usr/local/opt/arm-gcc-bin@8/bin:$PATH" # add gcc to path
 export PATH=$PATH:/Users/melvin/.local/share/bob/nvim-bin
 
 # Set name of the theme to load --- "random" loads random theme
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="af-magic"
 
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -207,3 +207,7 @@ export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
 
 # Added by Windsurf
 export PATH="/Users/melvin/.codeium/windsurf/bin:$PATH"
+
+eval $(thefuck --alias)
+
+alias claude="/Users/melvin/.claude/local/claude"
