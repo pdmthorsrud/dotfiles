@@ -1,61 +1,5 @@
 return {
-    {
-        "nvim-neorg/neorg",
-        opts = {
-            load = {
-                ["core.defaults"] = {},
-                ["core.integrations.telescope"] = {},
-            },
-        },
-        dependencies = { { "nvim-lua/plenary.nvim" }, { "nvim-neorg/neorg-telescope" } },
-        lazy = false,
-        version = "*",
-        config = function()
-            require("neorg").setup {
-                load = {
-                    ["core.defaults"] = {},
-                    ["core.concealer"] = {},
-                    ["core.dirman"] = {
-                        config = {
-                            workspaces = {
-                                notes = "~/projects/notes",
-                            },
-                            default_workspace = "notes",
-                        },
-                    },
-                },
-            }
-
-            vim.wo.foldlevel = 99
-            vim.wo.conceallevel = 2
-        end,
-    },
-    "folke/neodev.nvim",
     'ruifm/gitlinker.nvim',
-    'hlucco/nvim-eswpoch',
-    {
-        "folke/snacks.nvim",
-        priority = 1000,
-        lazy = false,
-        ---@type snacks.Config
-        opts = {
-            -- your configuration comes here
-            -- or leave it empty to use the default settings
-            -- refer to the configuration section below
-            bigfile = { enabled = true },
-            dashboard = { enabled = true },
-            explorer = { enabled = true },
-            indent = { enabled = true },
-            input = { enabled = true },
-            picker = { enabled = true },
-            notifier = { enabled = true },
-            quickfile = { enabled = true },
-            scope = { enabled = true },
-            scroll = { enabled = true },
-            statuscolumn = { enabled = true },
-            words = { enabled = true },
-        },
-    },
     {
 	    "obsidian-nvim/obsidian.nvim",
 	    version = "*", -- recommended, use latest release instead of latest commit
@@ -88,16 +32,6 @@ return {
     --         return not string.match(vim.fn.fnamemodify(vim.fn.bufname("%"), ":t"), ".*%dashboard")
     --     end,
     -- },
-    {
-        'goolord/alpha-nvim',
-        dependencies = {
-            'echasnovski/mini.icons',
-            'nvim-lua/plenary.nvim'
-        },
-        config = function ()
-            require'alpha'.setup(require'alpha.themes.theta'.config)
-        end
-    },
     {'romgrk/barbar.nvim',
         dependencies = {
             'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
@@ -141,10 +75,8 @@ return {
         'gen740/SmoothCursor.nvim',
     },
     "folke/which-key.nvim",
-    -- "github/copilot.vim",
     'nvim-lua/plenary.nvim',
     'glepnir/zephyr-nvim',
-    --'preservim/nerdtree',
     {'nvim-tree/nvim-tree.lua',
         config = function()
             require("nvim-tree").setup()
@@ -173,20 +105,9 @@ return {
     -- zettelkasten plugin
     'mbbill/undotree',
     -- run python scripts interactively (like a notebook without using a notebook)
-    {
-    "benlubas/molten-nvim",
-    version = "^1.0.0", -- use version <2.0.0 to avoid breaking changes
-    build = ":UpdateRemotePlugins",
-    init = function()
-        -- this is an example, not a default. Please see the readme for more configuration options
-        vim.g.molten_output_win_max_height = 12
-    end,
-},
     'tpope/vim-fugitive',
     'lewis6991/gitsigns.nvim',
     'voldikss/vim-floaterm',
-    -- calculation plugin for vim
-    'fcpg/vim-colddeck',
     --'preservim/vim-markdown',
     {"terrortylor/nvim-comment",
         config = function()
@@ -309,7 +230,6 @@ return {
             })
         end
     },
-    "eandrju/cellular-automaton.nvim",
     'shaunsingh/nord.nvim',
     {
         "kylechui/nvim-surround",
