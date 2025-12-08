@@ -10,6 +10,7 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.textwidth = 79
 vim.opt.expandtab = true
+vim.opt.conceallevel = 1
 
 vim.opt.wrap = true
 

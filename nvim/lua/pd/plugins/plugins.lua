@@ -260,5 +260,27 @@ return {
         "nvim-telescope/telescope-file-browser.nvim",
         dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
     },
-    'ggandor/leap.nvim'
+    {
+        "luispflamminger/git-sync.nvim",
+        opts = {
+            repos = {
+                {
+                    path = "~/projects/notes/obsidian_notes",
+                    sync_interval = 5, -- sync every 5 minutes
+                    commit_template = "[{hostname}] vault sync: {timestamp}",
+                }
+            }
+        }
+    },
+    'ggandor/leap.nvim',
+    -- Lua
+    {
+        "cdmill/focus.nvim",
+        cmd = { "Focus", "Zen", "Narrow" },
+        opts = {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+        }
+    }
 }
