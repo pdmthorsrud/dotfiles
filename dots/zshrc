@@ -51,7 +51,8 @@ eval "$(starship init zsh)"
 # ============================================
 
 # FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
+
 
 # Environment files (OS-specific)
 unameOut="$(uname -s)"
@@ -63,9 +64,6 @@ esac
 
 # Aliases
 . ~/.aliases
-
-# Local bin environment
-. "$HOME/.local/bin/env"
 
 # iTerm2 shell integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
