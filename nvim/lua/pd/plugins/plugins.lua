@@ -1,5 +1,6 @@
 return {
     'ruifm/gitlinker.nvim',
+    "christoomey/vim-tmux-navigator",
     {
 	    "obsidian-nvim/obsidian.nvim",
 	    version = "*", -- recommended, use latest release instead of latest commit
