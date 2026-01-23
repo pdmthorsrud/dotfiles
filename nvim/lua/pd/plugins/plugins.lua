@@ -2,6 +2,13 @@ return {
     'ruifm/gitlinker.nvim',
     "christoomey/vim-tmux-navigator",
     {
+        "tadaa/vimade",
+        opts = {
+            recipe = {"default", {animate = true}},
+            fadelevel = 0.4,
+        }
+    },
+    {
 	    "obsidian-nvim/obsidian.nvim",
 	    version = "*", -- recommended, use latest release instead of latest commit
 	    ft = "markdown",

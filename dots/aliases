@@ -1,4 +1,3 @@
-# this thing right here
 alias dots='cd $DOTFILESPROJECT'
 
 # scripts
@@ -24,6 +23,7 @@ alias vim='nvim'
 
 alias tmp='cd ~/tmp_SAFE_TO_DELETE'
 alias python='python3'
+alias ll='ls -lGa'
 
 
 # poetry
@@ -32,7 +32,9 @@ alias por='poetry run python'
 # projects
 alias sub='cd ~/projects/substrate_experiments/'
 alias buse='cd ~/projects/substrate_experiments/substrate_computer_use_browser_use_integration/'
-alias cdghost='cd ~/projects/ghostcall/'
+alias cdag='cd ~/projects/ghostcall/fastvoice_agent'
+alias cdapp='cd ~/projects/ghostcall/fastvoice_app/app'
 
 # tmux
 alias ghost="tmux attach -t ghostcall"
+alias cause="tmux attach -t causeway"
