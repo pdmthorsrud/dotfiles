@@ -5,22 +5,22 @@ return {
         lazy = false,
         ---@type snacks.Config
         opts = {
-            bigfile    = { enabled = true },
-            quickfile  = { enabled = true },
-            scope      = { enabled = true },
-            words      = { enabled = true },
-            input      = { enabled = true },
+            bigfile      = { enabled = true },
+            quickfile    = { enabled = true },
+            scope        = { enabled = true },
+            words        = { enabled = true },
+            input        = { enabled = true },
             statuscolumn = { enabled = true },
-            indent     = { enabled = true, scope = { enabled = false } },
-            scroll     = { enabled = true },
-            notifier   = { enabled = true },
-            gitbrowse  = { enabled = true },
-            dim        = { enabled = true },
-            zen = {
+            indent       = { enabled = true, scope = { enabled = false } },
+            scroll       = { enabled = true },
+            notifier     = { enabled = true },
+            gitbrowse    = { enabled = true },
+            dim          = { enabled = true },
+            zen          = {
                 enabled = true,
                 win = { width = 0.65 },
             },
-            terminal = {
+            terminal     = {
                 enabled = true,
                 win = {
                     position = "float",
@@ -28,9 +28,9 @@ return {
                     width    = 0.85,
                 },
             },
-            explorer = { enabled = true },
-            picker   = { enabled = true },
-            dashboard = { enabled = false },
+            explorer     = { enabled = true },
+            picker       = { enabled = true },
+            dashboard    = { enabled = true },
         },
     },
 }
