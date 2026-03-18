@@ -35,9 +35,17 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "250"
 vim.cmd [[colorscheme kanagawa]]
 
+-- SnacksPickerTree defaults to LineNr which makes the explorer's tree
+-- characters (│ ├ └) visually stand out. Link to Comment for a subtler look.
+vim.api.nvim_create_autocmd("ColorScheme", {
+    pattern = "*",
+    callback = function()
+        vim.api.nvim_set_hl(0, "SnacksPickerTree", { link = "Comment" })
+    end,
+})
+vim.api.nvim_set_hl(0, "SnacksPickerTree", { link = "Comment" })
+
 -- set a lua global variable for neovim
 vim.g.magma_automatically_open_output = false
-vim.g.floaterm_height = 0.85
-vim.g.floaterm_width = 0.85
-vim.g.python3_host_prog=vim.fn.expand("~/virtualenvironments/nvim_python_devel/bin/python3")
+vim.g.python3_host_prog = vim.fn.expand("~/virtualenvironments/nvim_python_devel/bin/python3")
 

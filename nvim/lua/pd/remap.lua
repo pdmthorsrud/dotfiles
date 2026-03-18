@@ -1,13 +1,19 @@
--- telescope
-vim.keymap.set("n", "<leader>fas", ":Telescope live_grep use_regex=true search=<CR>")
-vim.keymap.set("n", "<leader>fs", ":Telescope live_grep use_regex=true search_dirs={vim.fn.expand('%:p')} search=<CR>")
-vim.keymap.set("n", "<leader>fds", "<cmd>Telescope dir live_grep<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>fdf", "<cmd>Telescope dir find_files<CR>", { noremap = true, silent = true })
+-- snacks.picker extras (see telescope.lua for basic pickers)
+vim.keymap.set("n", "<leader>fas", function() Snacks.picker.grep() end,                                                  { desc = "Grep (regex)" })
+vim.keymap.set("n", "<leader>fs",  function() Snacks.picker.grep({ dirs = { vim.fn.expand("%:p:h") } }) end,             { desc = "Grep in current file dir" })
+vim.keymap.set("n", "<leader>fds", function()
+    local dir = vim.fn.input("Directory: ", "", "dir")
+    if dir ~= "" then Snacks.picker.grep({ cwd = dir }) end
+end, { desc = "Grep in directory" })
+vim.keymap.set("n", "<leader>fdf", function()
+    local dir = vim.fn.input("Directory: ", "", "dir")
+    if dir ~= "" then Snacks.picker.files({ cwd = dir }) end
+end, { desc = "Find files in directory" })
 
 -- QoL stuff
 vim.keymap.set("n", "<leader>o", "o<Esc>k")
 vim.keymap.set("n", "<leader>O", "O<Esc>j")
-vim.keymap.set("n", "<leader>bc", ":BufferClose<CR>")
+vim.keymap.set("n", "<leader>bc", ":bd<CR>", { desc = "Close buffer" })
 vim.keymap.set("i", "jk", "<Esc>")
 vim.keymap.set("n", "j", "gj")
 vim.keymap.set("n", "k", "gk")
@@ -31,9 +37,9 @@ vim.keymap.set('n', '<leader>ss', vim.cmd.write)
 -- remap <leader>lr to reload lua config
 vim.keymap.set("n", "<leader>lr", ":luafile ~/.config/nvim/lua/pd/init.lua<CR>")
 
--- floaterm stuff
-vim.keymap.set("n", "<leader>nt", ":FloatermNew! cd '%:p:h'<CR>")
-vim.keymap.set({'n','v','i','t'}, "<F5>", "<C-\\><C-N>:FloatermToggle<CR>")
+-- snacks.terminal (replaces vim-floaterm)
+vim.keymap.set("n",               "<leader>nt", function() Snacks.terminal(nil, { cwd = vim.fn.expand("%:p:h") }) end, { desc = "Terminal (current dir)" })
+vim.keymap.set({ "n", "v", "i", "t" }, "<F5>", function() Snacks.terminal.toggle() end,                              { desc = "Toggle terminal" })
 
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
@@ -57,14 +63,9 @@ vim.keymap.set("n", "<leader>vpr", "<cmd>e ~/.config/nvim/lua/pd/remap.lua<CR>")
 vim.keymap.set("n", "<leader>jr", "<cmd>luafile ~/.config/nvim/lua/pd/init.lua<CR>");
 
 
--- Nvim tree stuff
-vim.keymap.set("n", "<leader>t", vim.cmd.NvimTreeToggle)
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>ft",
-  ":Telescope file_browser<CR>",
-  { noremap = true }
-)
+-- snacks.explorer (replaces nvim-tree + telescope-file-browser)
+vim.keymap.set("n", "<leader>t",  function() Snacks.explorer() end, { desc = "File explorer" })
+vim.keymap.set("n", "<leader>ft", function() Snacks.explorer() end, { desc = "File explorer" })
 
 -- comment toggle
 vim.keymap.set({'n'}, '<leader>c', vim.cmd.CommentToggle)

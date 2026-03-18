@@ -38,3 +38,4 @@ alias cdapp='cd ~/projects/ghostcall/fastvoice_app/app'
 # tmux
 alias ghost="tmux attach -t ghostcall"
 alias cause="tmux attach -t causeway"
+alias light="tmux attach -t lightrag"
