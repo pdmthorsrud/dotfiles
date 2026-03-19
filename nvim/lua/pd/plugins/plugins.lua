@@ -70,6 +70,11 @@ return {
     'nvim-lualine/lualine.nvim',
     'folke/tokyonight.nvim',
     'rebelot/kanagawa.nvim',
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
+    },
     'tpope/vim-repeat',
     {
         "stevearc/conform.nvim",

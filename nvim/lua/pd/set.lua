@@ -4,6 +4,8 @@ vim.opt.guicursor = ""
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = "number"
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -33,7 +35,14 @@ vim.opt.fillchars = {eob = " "}
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "250"
-vim.cmd [[colorscheme kanagawa]]
+
+-- Tokyo Night setup
+require("tokyonight").setup({
+    style = "night", -- storm, moon, night, day
+    transparent = true,
+    terminal_colors = true,
+})
+vim.cmd.colorscheme "tokyonight"
 
 -- SnacksPickerTree defaults to LineNr which makes the explorer's tree
 -- characters (│ ├ └) visually stand out. Link to Comment for a subtler look.
