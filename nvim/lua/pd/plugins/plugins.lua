@@ -29,6 +29,18 @@ return {
             require('mini.pairs').setup()
         end
     },
+    {
+        "neanias/everforest-nvim",
+        version = false,
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require("everforest").setup({
+                background = "medium",
+                transparent_background_level = 1,
+            })
+        end,
+    },
     'glepnir/zephyr-nvim',
     "nvim-tree/nvim-web-devicons",
     { 'rose-pine/neovim', name = 'rose-pine' },

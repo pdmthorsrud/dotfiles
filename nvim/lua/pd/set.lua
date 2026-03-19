@@ -36,13 +36,7 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "250"
 
--- Tokyo Night setup
-require("tokyonight").setup({
-    style = "night", -- storm, moon, night, day
-    transparent = true,
-    terminal_colors = true,
-})
-vim.cmd.colorscheme "tokyonight"
+vim.cmd.colorscheme "everforest"
 
 -- SnacksPickerTree defaults to LineNr which makes the explorer's tree
 -- characters (│ ├ └) visually stand out. Link to Comment for a subtler look.
