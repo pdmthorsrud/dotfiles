@@ -29,7 +29,12 @@ return {
                 },
             },
             explorer     = { enabled = true },
-            picker       = { enabled = true },
+            picker       = {
+                enabled = true,
+                sources = {
+                    explorer = { hidden = true }
+                }
+            },
             dashboard    = { enabled = true },
         },
     },
