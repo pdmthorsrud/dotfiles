@@ -1,4 +1,4 @@
-vim.opt.ff = unix
+vim.o.fileformats = "unix,dos,mac"
 
 vim.opt.guicursor = ""
 
@@ -40,13 +40,25 @@ vim.cmd.colorscheme "everforest"
 
 -- SnacksPickerTree defaults to LineNr which makes the explorer's tree
 -- characters (│ ├ └) visually stand out. Link to Comment for a subtler look.
+-- Untracked/ignored files default to NonText which is very low contrast;
+-- use a lighter grey closer to white for better readability.
 vim.api.nvim_create_autocmd("ColorScheme", {
     pattern = "*",
     callback = function()
         vim.api.nvim_set_hl(0, "SnacksPickerTree", { link = "Comment" })
+        vim.api.nvim_set_hl(0, "SnacksPickerGitStatusUntracked", { fg = "#d3c6aa" })
+        vim.api.nvim_set_hl(0, "SnacksPickerGitStatusIgnored", { fg = "#d3c6aa" })
+        vim.api.nvim_set_hl(0, "SnacksPickerPathHidden", { fg = "#d3c6aa" })
+        vim.api.nvim_set_hl(0, "SnacksPickerPathIgnored", { fg = "#d3c6aa" })
+        vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#e69875", bold = true })
     end,
 })
 vim.api.nvim_set_hl(0, "SnacksPickerTree", { link = "Comment" })
+vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#e69875", bold = true })
+vim.api.nvim_set_hl(0, "SnacksPickerGitStatusUntracked", { fg = "#d3c6aa" })
+vim.api.nvim_set_hl(0, "SnacksPickerGitStatusIgnored", { fg = "#d3c6aa" })
+vim.api.nvim_set_hl(0, "SnacksPickerPathHidden", { fg = "#d3c6aa" })
+vim.api.nvim_set_hl(0, "SnacksPickerPathIgnored", { fg = "#d3c6aa" })
 
 -- set a lua global variable for neovim
 vim.g.magma_automatically_open_output = false
