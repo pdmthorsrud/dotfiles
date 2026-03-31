@@ -10,7 +10,8 @@ vim.opt.cursorlineopt = "number"
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
-vim.opt.textwidth = 79
+vim.opt.textwidth = 0
+vim.opt.formatoptions:remove("t")
 vim.opt.expandtab = true
 vim.opt.conceallevel = 1
 

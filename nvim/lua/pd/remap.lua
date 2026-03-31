@@ -15,8 +15,8 @@ vim.keymap.set("n", "<leader>o", "o<Esc>k")
 vim.keymap.set("n", "<leader>O", "O<Esc>j")
 vim.keymap.set("n", "<leader>bc", ":bd<CR>", { desc = "Close buffer" })
 vim.keymap.set("i", "jk", "<Esc>")
-vim.keymap.set("n", "j", "gj")
-vim.keymap.set("n", "k", "gk")
+vim.keymap.set({ "n", "v" }, "j", "gj")
+vim.keymap.set({ "n", "v" }, "k", "gk")
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
@@ -48,6 +48,9 @@ end)
 -- snacks.terminal (replaces vim-floaterm)
 vim.keymap.set("n",               "<leader>nt", function() Snacks.terminal(nil, { cwd = vim.fn.expand("%:p:h") }) end, { desc = "Terminal (current dir)" })
 vim.keymap.set({ "n", "v", "i", "t" }, "<F5>", function() Snacks.terminal.toggle() end,                              { desc = "Toggle terminal" })
+
+-- snacks.zen
+vim.keymap.set("n", "<leader>z", function() Snacks.zen() end, { desc = "Toggle zen mode" })
 
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 

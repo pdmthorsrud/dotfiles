@@ -1,54 +1,123 @@
-#### FIG ENV VARIABLES ####
-# Please make sure this block is at the start of this file.
-[ -s ~/.fig/shell/pre.sh ] && source ~/.fig/shell/pre.sh
-#### END FIG ENV VARIABLES ####
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+
+# Path to your Oh My Zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time Oh My Zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="powerlevel10k/powerlevel10k"
+# Set list of themes to pick from when loading at random # Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+
+# Uncomment the following line to change how often to auto-update (in days).
+# zstyle ':omz:update' frequency 13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
 
 # ============================================
-# PATH Configuration
+# Everforest LS Colors
 # ============================================
-export PATH="/usr/local/opt/arm-gcc-bin@8/bin:$PATH"
-export PATH="$PATH:/usr/local/go/bin"
-export PATH=$PATH:/Users/melvin/.local/share/bob/nvim-bin
-export PATH="/Users/melvin/.antigravity/antigravity/bin:$PATH"
-export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
-export EDITOR="/Users/melvin/.local/share/bob/nvim-bin/nvim"
+# LSCOLORS: BSD ls (macOS default) — 11 pairs of fg/bg
+# a=black b=red c=green d=yellow e=blue f=magenta g=cyan h=grey
+# uppercase = bold variant; x = default
+export LSCOLORS="ExGxFxdxCxDxDxBxBxExEx"
 
-# Go
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
+# LS_COLORS: GNU ls / zsh completions (256-color)
+# Everforest palette: red=174 orange=173 yellow=179 green=150 aqua=115 blue=109 purple=175
+export LS_COLORS="no=0:fi=0:di=1;38;5;109:ln=1;38;5;115:pi=38;5;179:so=1;38;5;175:bd=1;38;5;179:cd=1;38;5;173:or=1;38;5;174:mi=1;38;5;174:ex=1;38;5;150:su=1;38;5;174:sg=1;38;5;179:tw=1;38;5;150:ow=38;5;109:*.tar=38;5;174:*.tgz=38;5;174:*.arc=38;5;174:*.arj=38;5;174:*.taz=38;5;174:*.lha=38;5;174:*.lz4=38;5;174:*.lzh=38;5;174:*.lzma=38;5;174:*.tlz=38;5;174:*.txz=38;5;174:*.tzo=38;5;174:*.t7z=38;5;174:*.zip=38;5;174:*.z=38;5;174:*.dz=38;5;174:*.gz=38;5;174:*.lrz=38;5;174:*.lz=38;5;174:*.lzo=38;5;174:*.xz=38;5;174:*.zst=38;5;174:*.tzst=38;5;174:*.bz2=38;5;174:*.bz=38;5;174:*.tbz=38;5;174:*.tbz2=38;5;174:*.tz=38;5;174:*.deb=38;5;174:*.rpm=38;5;174:*.jar=38;5;174:*.war=38;5;174:*.ear=38;5;174:*.sar=38;5;174:*.rar=38;5;174:*.alz=38;5;174:*.ace=38;5;174:*.zoo=38;5;174:*.cpio=38;5;174:*.7z=38;5;174:*.rz=38;5;174:*.cab=38;5;174:*.wim=38;5;174:*.swm=38;5;174:*.dwm=38;5;174:*.esd=38;5;174:*.jpg=38;5;175:*.jpeg=38;5;175:*.mjpg=38;5;175:*.mjpeg=38;5;175:*.gif=38;5;175:*.bmp=38;5;175:*.pbm=38;5;175:*.pgm=38;5;175:*.ppm=38;5;175:*.tga=38;5;175:*.xbm=38;5;175:*.xpm=38;5;175:*.tif=38;5;175:*.tiff=38;5;175:*.png=38;5;175:*.svg=38;5;175:*.svgz=38;5;175:*.mng=38;5;175:*.pcx=38;5;175:*.mov=38;5;175:*.mpg=38;5;175:*.mpeg=38;5;175:*.m2v=38;5;175:*.mkv=38;5;175:*.webm=38;5;175:*.webp=38;5;175:*.ogm=38;5;175:*.mp4=38;5;175:*.m4v=38;5;175:*.mp4v=38;5;175:*.vob=38;5;175:*.qt=38;5;175:*.nuv=38;5;175:*.wmv=38;5;175:*.asf=38;5;175:*.rm=38;5;175:*.rmvb=38;5;175:*.flc=38;5;175:*.avi=38;5;175:*.fli=38;5;175:*.flv=38;5;175:*.xcf=38;5;175:*.xwd=38;5;175:*.yuv=38;5;175:*.cgm=38;5;175:*.emf=38;5;175:*.ogv=38;5;175:*.ogx=38;5;175:*.aac=38;5;109:*.au=38;5;109:*.flac=38;5;109:*.m4a=38;5;109:*.mid=38;5;109:*.midi=38;5;109:*.mka=38;5;109:*.mp3=38;5;109:*.mpc=38;5;109:*.ogg=38;5;109:*.ra=38;5;109:*.wav=38;5;109:*.oga=38;5;109:*.opus=38;5;109:*.spx=38;5;109:*.xspf=38;5;109:*.pdf=38;5;179:*.doc=38;5;179:*.docx=38;5;179:*.xls=38;5;179:*.xlsx=38;5;179:*.ppt=38;5;179:*.pptx=38;5;179"
 
-# Python/pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
+# export MANPATH="/usr/local/man:$MANPATH"
 
-# Bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
 
-# Library paths
-export DYLD_LIBRARY_PATH="/opt/homebrew/lib:$DYLD_LIBRARY_PATH"
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='nvim'
+# fi
 
-# ============================================
-# Zsh Configuration
-# ============================================
-autoload -Uz compinit
-compinit
+# Compilation flags
+# export ARCHFLAGS="-arch $(uname -m)"
 
-autoload -U +X bashcompinit && bashcompinit
-
-# History
-HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
-setopt SHARE_HISTORY
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_SPACE
-
-# ============================================
-# Starship Prompt
-# ============================================
-eval "$(starship init zsh)"
+# Set personal aliases, overriding those provided by Oh My Zsh libs,
+# plugins, and themes. Aliases can be placed here, though Oh My Zsh
+# users are encouraged to define aliases within a top-level file in
+# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
+# - $ZSH_CUSTOM/aliases.zsh
+# - $ZSH_CUSTOM/macos.zsh
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # ============================================
 # External Sources
@@ -97,3 +166,6 @@ pnpm() { _load_nvm; pnpm "$@"; }
 # Please make sure this block is at the end of this file.
 [ -s ~/.fig/fig.sh ] && source ~/.fig/fig.sh
 #### END FIG ENV VARIABLES ####
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
