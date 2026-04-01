@@ -5,7 +5,7 @@ source "$HOME/.config/sketchybar/variables.sh" # Loads all defined colors
 # General bar and defaults
 
 sketchybar --bar height=30 \
-	color="$BAR_COLOR" \
+	color="$TRANSPARENT" \
 	shadow="$SHADOW" \
 	position=top \
 	sticky=on \
@@ -33,20 +33,44 @@ sketchybar --bar height=30 \
 	popup.background.color="$POPUP_BACKGROUND_COLOR" \
 	popup.background.shadow.drawing="$SHADOW"
 
-# Left
-# source "$ITEM_DIR/apple.sh"
-source "$ITEM_DIR/spaces.sh"
-source "$ITEM_DIR/front_app.sh"
-
-# Center (of notch)
-source "$ITEM_DIR/spotify.sh"
-
-# Right
+# Left — date & time
 source "$ITEM_DIR/clock.sh"
 source "$ITEM_DIR/calendar.sh"
-source "$ITEM_DIR/battery.sh"
+
+sketchybar --add bracket datetime '(clock calendar)' \
+	--set datetime \
+	background.color="$BAR_COLOR" \
+	background.corner_radius="$CORNER_RADIUS" \
+	background.height=26 \
+	background.border_width="$BORDER_WIDTH" \
+	background.border_color="$MAGENTA" \
+	background.padding_left=5 \
+	background.padding_right=5 \
+	background.drawing=on
+
+# Left — front app
+source "$ITEM_DIR/front_app.sh"
+
+# Center (notch) — spotify
+source "$ITEM_DIR/spotify.sh"
+
+# Center — workspaces
+source "$ITEM_DIR/spaces.sh"
+
+# Right — volume & battery
 source "$ITEM_DIR/volume.sh"
-source "$ITEM_DIR/cpu.sh"
+source "$ITEM_DIR/battery.sh"
+
+sketchybar --add bracket system '(sound battery)' \
+	--set system \
+	background.color="$BAR_COLOR" \
+	background.corner_radius="$CORNER_RADIUS" \
+	background.height=26 \
+	background.border_width="$BORDER_WIDTH" \
+	background.border_color="$CYAN" \
+	background.padding_left=5 \
+	background.padding_right=5 \
+	background.drawing=on
 
 #################### Finalizing Setup ####################
 
