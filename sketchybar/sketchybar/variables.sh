@@ -1,0 +1,38 @@
+#!/usr/bin/env sh
+
+# Color Palette
+# Everforest Dark Medium
+BLACK=0xff2d353b
+WHITE=0xffd3c6aa
+MAGENTA=0xffd699b6
+BLUE=0xff7fbbb3
+CYAN=0xff83c092
+GREEN=0xffa7c080
+YELLOW=0xffdbbc7f
+ORANGE=0xffe69875
+RED=0xffe67e80
+BAR_COLOR=0xff232a2e
+COMMENT=0xff859289
+
+TRANSPARENT=0x00000000
+
+# General bar colors
+ICON_COLOR=$WHITE  # Color of all icons
+LABEL_COLOR=$WHITE # Color of all labels
+
+ITEM_DIR="$HOME/.config/sketchybar/items"
+PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
+
+FONT="MesloLGS NF"
+
+PADDINGS=3
+
+POPUP_BORDER_WIDTH=2
+POPUP_CORNER_RADIUS=11
+POPUP_BACKGROUND_COLOR=$BLACK
+POPUP_BORDER_COLOR=$COMMENT
+
+CORNER_RADIUS=15
+BORDER_WIDTH=2
+
+SHADOW=on
