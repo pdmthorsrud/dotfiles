@@ -10,12 +10,13 @@ vim.opt.cursorlineopt = "number"
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
-vim.opt.textwidth = 0
-vim.opt.formatoptions:remove("t")
+vim.opt.textwidth = 100
 vim.opt.expandtab = true
-vim.opt.conceallevel = 1
+vim.opt.conceallevel = 0
 
 vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.breakindent = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
