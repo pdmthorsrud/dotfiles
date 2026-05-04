@@ -37,7 +37,7 @@ sketchybar --bar height=30 \
 source "$ITEM_DIR/clock.sh"
 source "$ITEM_DIR/calendar.sh"
 
-sketchybar --add bracket datetime '(clock calendar)' \
+sketchybar --add bracket datetime clock calendar \
 	--set datetime \
 	background.color="$BAR_COLOR" \
 	background.corner_radius="$CORNER_RADIUS" \
@@ -61,7 +61,7 @@ source "$ITEM_DIR/spaces.sh"
 source "$ITEM_DIR/volume.sh"
 source "$ITEM_DIR/battery.sh"
 
-sketchybar --add bracket system '(sound battery)' \
+sketchybar --add bracket system sound battery \
 	--set system \
 	background.color="$BAR_COLOR" \
 	background.corner_radius="$CORNER_RADIUS" \
