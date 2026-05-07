@@ -41,6 +41,13 @@ return {
             -- built-in sources — no extra plugins needed
             sources = {
                 default = { "lsp", "path", "snippets", "buffer" },
+                providers = {
+                    snippets = {
+                        opts = {
+                            paths = { vim.fn.stdpath("config") .. "/snippets" },
+                        },
+                    },
+                },
             },
 
             -- Rust fuzzy matcher with typo resistance

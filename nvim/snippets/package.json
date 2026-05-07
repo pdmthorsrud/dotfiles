@@ -1,0 +1,9 @@
+{
+  "name": "custom-snippets",
+  "engines": { "vscode": "*" },
+  "contributes": {
+    "snippets": [
+      { "language": "sql", "path": "./sql.json" }
+    ]
+  }
+}
