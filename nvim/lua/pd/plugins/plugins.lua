@@ -8,6 +8,39 @@ return {
         -- dependencies = { "saghen/blink.cmp" },
     },
     {
+        "PedramNavid/dbtpal",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim",
+        },
+        ft = {
+            "sql",
+            "md",
+            "yaml",
+        },
+        keys = {
+            { "<leader>drf", "<cmd>DbtRun<cr>" },
+            { "<leader>drp", "<cmd>DbtRunAll<cr>" },
+            { "<leader>dtf", "<cmd>DbtTest<cr>" },
+            { "<leader>dm",  "<cmd>lua require('dbtpal.telescope').dbt_picker()<cr>" },
+        },
+        config = function()
+            require("dbtpal").setup({
+                path_to_dbt = "/Users/per.thorsrud/Library/Caches/pypoetry/virtualenvs/kki-dbt-vKZI6x8s-py3.13/bin/dbt",
+                path_to_dbt_project = "",
+                path_to_dbt_profiles_dir = vim.fn.expand("~/.dbt"),
+                include_profiles_dir = true,
+                include_project_dir = true,
+                include_log_level = true,
+                extended_path_search = true,
+                protect_compiled_files = true,
+                pre_cmd_args = {},
+                post_cmd_args = {},
+            })
+            require("telescope").load_extension("dbtpal")
+        end,
+    },
+    {
         "obsidian-nvim/obsidian.nvim",
         version = "*",
         ft = "markdown",
