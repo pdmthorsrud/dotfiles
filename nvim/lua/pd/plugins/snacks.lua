@@ -15,6 +15,7 @@ return {
             scroll       = { enabled = true },
             notifier     = { enabled = true },
             gitbrowse    = { enabled = true },
+            gh           = { enabled = true },
             dim          = { enabled = true },
             zen          = {
                 enabled = true,
@@ -32,10 +33,18 @@ return {
             picker       = {
                 enabled = true,
                 sources = {
-                    explorer = { hidden = true }
+                    explorer = { hidden = true },
+                    gh_issue = {},
+                    gh_pr    = {},
                 }
             },
             dashboard    = { enabled = true },
+        },
+        keys = {
+            { "<leader>gi", function() Snacks.picker.gh_issue() end,                        desc = "GitHub Issues" },
+            { "<leader>gp", function() Snacks.picker.gh_pr() end,                          desc = "GitHub PRs" },
+            { "<leader>gI", function() Snacks.picker.gh_issue({ state = "all" }) end,      desc = "GitHub Issues (All)" },
+            { "<leader>gP", function() Snacks.picker.gh_pr({ state = "all" }) end,         desc = "GitHub PRs (All)" },
         },
     },
 }
