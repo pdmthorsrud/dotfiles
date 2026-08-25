@@ -64,14 +64,14 @@ return {
         end
     },
     {
-        "neanias/everforest-nvim",
-        version = false,
+        "maxmx03/fluoromachine.nvim",
         lazy = false,
         priority = 1000,
         config = function()
-            require("everforest").setup({
-                background = "medium",
-                transparent_background_level = 1,
+            require("fluoromachine").setup({
+                glow = false,
+                theme = "fluoromachine",
+                transparent = false,
             })
         end,
     },

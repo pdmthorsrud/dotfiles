@@ -38,7 +38,7 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "250"
 
-vim.cmd.colorscheme "everforest"
+vim.cmd.colorscheme "fluoromachine"
 
 -- SnacksPickerTree defaults to LineNr which makes the explorer's tree
 -- characters (│ ├ └) visually stand out. Link to Comment for a subtler look.
@@ -48,19 +48,19 @@ vim.api.nvim_create_autocmd("ColorScheme", {
     pattern = "*",
     callback = function()
         vim.api.nvim_set_hl(0, "SnacksPickerTree", { link = "Comment" })
-        vim.api.nvim_set_hl(0, "SnacksPickerGitStatusUntracked", { fg = "#d3c6aa" })
-        vim.api.nvim_set_hl(0, "SnacksPickerGitStatusIgnored", { fg = "#d3c6aa" })
-        vim.api.nvim_set_hl(0, "SnacksPickerPathHidden", { fg = "#d3c6aa" })
-        vim.api.nvim_set_hl(0, "SnacksPickerPathIgnored", { fg = "#d3c6aa" })
-        vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#e69875", bold = true })
+        vim.api.nvim_set_hl(0, "SnacksPickerGitStatusUntracked", { fg = "#8BA7A7" })
+        vim.api.nvim_set_hl(0, "SnacksPickerGitStatusIgnored", { fg = "#8BA7A7" })
+        vim.api.nvim_set_hl(0, "SnacksPickerPathHidden", { fg = "#8BA7A7" })
+        vim.api.nvim_set_hl(0, "SnacksPickerPathIgnored", { fg = "#8BA7A7" })
+        vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#FF8B39", bold = true })
     end,
 })
 vim.api.nvim_set_hl(0, "SnacksPickerTree", { link = "Comment" })
-vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#e69875", bold = true })
-vim.api.nvim_set_hl(0, "SnacksPickerGitStatusUntracked", { fg = "#d3c6aa" })
-vim.api.nvim_set_hl(0, "SnacksPickerGitStatusIgnored", { fg = "#d3c6aa" })
-vim.api.nvim_set_hl(0, "SnacksPickerPathHidden", { fg = "#d3c6aa" })
-vim.api.nvim_set_hl(0, "SnacksPickerPathIgnored", { fg = "#d3c6aa" })
+vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#FF8B39", bold = true })
+vim.api.nvim_set_hl(0, "SnacksPickerGitStatusUntracked", { fg = "#8BA7A7" })
+vim.api.nvim_set_hl(0, "SnacksPickerGitStatusIgnored", { fg = "#8BA7A7" })
+vim.api.nvim_set_hl(0, "SnacksPickerPathHidden", { fg = "#8BA7A7" })
+vim.api.nvim_set_hl(0, "SnacksPickerPathIgnored", { fg = "#8BA7A7" })
 
 -- set a lua global variable for neovim
 vim.g.magma_automatically_open_output = false
