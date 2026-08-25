@@ -1,5 +1,15 @@
 return {
     "christoomey/vim-tmux-navigator",
+    -- preview markdown in the browser (localhost server, live reload)
+    {
+        "brianhuster/live-preview.nvim",
+        cmd = "LivePreview",
+        keys = {
+            { "<leader>mp", "<cmd>LivePreview start<cr>", desc = "Markdown preview (browser)" },
+            { "<leader>mP", "<cmd>LivePreview close<cr>", desc = "Markdown preview stop" },
+        },
+        opts = {},
+    },
     {
         "OXY2DEV/markview.nvim",
         lazy = false,

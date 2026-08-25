@@ -169,6 +169,10 @@ pnpm() { _load_nvm; pnpm "$@"; }
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+<<<<<<< HEAD
 
 # Machine-local aliases (not tracked in dotfiles repo)
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
+=======
+export PATH="$HOME/.local/bin:$PATH"
+>>>>>>> e938dad (New stuff)
