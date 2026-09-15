@@ -160,7 +160,7 @@ pnpm() { _load_nvm; pnpm "$@"; }
 # ============================================
 # Bun completions
 # ============================================
-[ -s "/Users/melvin/.bun/_bun" ] && source "/Users/melvin/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 #### FIG ENV VARIABLES ####
 # Please make sure this block is at the end of this file.
@@ -172,4 +172,6 @@ pnpm() { _load_nvm; pnpm "$@"; }
 
 # Machine-local aliases (not tracked in dotfiles repo)
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
+export PATH="$HOME/.local/bin:$PATH"
+export CURL_CA_BUNDLE="/Users/pdmthorsrud/.mac-ca-roots"
 export PATH="$HOME/.local/bin:$PATH"
