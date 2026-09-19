@@ -1,8 +1,6 @@
 # Variables
-BASE="/home/pdmthorsrud/projects"
+BASE="${HOME}/projects"
 export DOTFILESPROJECT="${BASE}/dotfiles"
-export DOTFILESDIR="${BASE}/dotfiles/dots"
-export SCRIPTSDIR="${BASE}/dotfiles/scripts"
 export DOTFILESDIR="${BASE}/dotfiles/dots"
 export SCRIPTSDIR="${BASE}/dotfiles/scripts"
 export GITLABDIR="${BASE}/gitlab"

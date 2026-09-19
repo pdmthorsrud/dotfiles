@@ -160,7 +160,7 @@ pnpm() { _load_nvm; pnpm "$@"; }
 # ============================================
 # Bun completions
 # ============================================
-[ -s "/Users/melvin/.bun/_bun" ] && source "/Users/melvin/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 #### FIG ENV VARIABLES ####
 # Please make sure this block is at the end of this file.
