@@ -173,5 +173,4 @@ pnpm() { _load_nvm; pnpm "$@"; }
 # Machine-local aliases (not tracked in dotfiles repo)
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
 export PATH="$HOME/.local/bin:$PATH"
-export CURL_CA_BUNDLE="/Users/pdmthorsrud/.mac-ca-roots"
-export PATH="$HOME/.local/bin:$PATH"
+[[ -f "$HOME/.mac-ca-roots" ]] && export CURL_CA_BUNDLE="$HOME/.mac-ca-roots"
