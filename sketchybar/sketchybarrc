@@ -57,11 +57,10 @@ source "$ITEM_DIR/spotify.sh"
 # Center — workspaces
 source "$ITEM_DIR/spaces.sh"
 
-# Right — volume & battery
-source "$ITEM_DIR/volume.sh"
+# Right — battery
 source "$ITEM_DIR/battery.sh"
 
-sketchybar --add bracket system sound battery \
+sketchybar --add bracket system battery \
 	--set system \
 	background.color="$BAR_COLOR" \
 	background.corner_radius="$CORNER_RADIUS" \
