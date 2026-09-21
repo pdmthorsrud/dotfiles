@@ -52,8 +52,9 @@ automatically-unhide-macos-hidden-apps = false
 # even when they are invisible.
 # This config version is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
-persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B",
-                         "C", "D", "E", "F", "G", "I", "M", "N", "O", "P", "Q",
+persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10",
+                         "11", "12", "13", "14", "15", "16", "17", "18", "19", "20",
+                         "A", "B", "C", "D", "E", "F", "G", "I", "M", "N", "O", "P", "Q",
                          "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
 # A callback that runs every time binding mode changes
@@ -136,6 +137,7 @@ on-mode-changed = []
     ctrl-equal = 'resize smart +50'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
+    ctrl-0 = 'workspace 10'
     ctrl-1 = 'workspace 1'
     ctrl-2 = 'workspace 2'
     ctrl-3 = 'workspace 3'
@@ -146,7 +148,19 @@ on-mode-changed = []
     ctrl-8 = 'workspace 8'
     ctrl-9 = 'workspace 9'
 
+    ctrl-cmd-0 = 'workspace 20'
+    ctrl-cmd-1 = 'workspace 11'
+    ctrl-cmd-2 = 'workspace 12'
+    ctrl-cmd-3 = 'workspace 13'
+    ctrl-cmd-4 = 'workspace 14'
+    ctrl-cmd-5 = 'workspace 15'
+    ctrl-cmd-6 = 'workspace 16'
+    ctrl-cmd-7 = 'workspace 17'
+    ctrl-cmd-8 = 'workspace 18'
+    ctrl-cmd-9 = 'workspace 19'
+
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
+    ctrl-shift-0 = 'move-node-to-workspace 10'
     ctrl-shift-1 = 'move-node-to-workspace 1'
     ctrl-shift-2 = 'move-node-to-workspace 2'
     ctrl-shift-3 = 'move-node-to-workspace 3'
@@ -156,6 +170,17 @@ on-mode-changed = []
     ctrl-shift-7 = 'move-node-to-workspace 7'
     ctrl-shift-8 = 'move-node-to-workspace 8'
     ctrl-shift-9 = 'move-node-to-workspace 9'
+
+    ctrl-cmd-shift-0 = 'move-node-to-workspace 20'
+    ctrl-cmd-shift-1 = 'move-node-to-workspace 11'
+    ctrl-cmd-shift-2 = 'move-node-to-workspace 12'
+    ctrl-cmd-shift-3 = 'move-node-to-workspace 13'
+    ctrl-cmd-shift-4 = 'move-node-to-workspace 14'
+    ctrl-cmd-shift-5 = 'move-node-to-workspace 15'
+    ctrl-cmd-shift-6 = 'move-node-to-workspace 16'
+    ctrl-cmd-shift-7 = 'move-node-to-workspace 17'
+    ctrl-cmd-shift-8 = 'move-node-to-workspace 18'
+    ctrl-cmd-shift-9 = 'move-node-to-workspace 19'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     # ctrl-tab = 'workspace-back-and-forth'
