@@ -11,6 +11,8 @@ GREEN=0xffa7c080
 YELLOW=0xffdbbc7f
 ORANGE=0xffe69875
 RED=0xffe67e80
+SHAMROCK=0xff009e60
+PURPLE=0xffaf6df9
 BAR_COLOR=0xff232a2e
 COMMENT=0xff859289
 
@@ -23,7 +25,7 @@ LABEL_COLOR=$WHITE # Color of all labels
 ITEM_DIR="$HOME/.config/sketchybar/items"
 PLUGIN_DIR="$HOME/.config/sketchybar/plugins"
 
-FONT="MesloLGS Nerd Font"
+FONT="IosevkaTerm Nerd Font"
 
 PADDINGS=3
 

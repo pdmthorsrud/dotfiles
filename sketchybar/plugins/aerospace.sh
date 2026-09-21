@@ -11,13 +11,31 @@ WINDOWS=$(aerospace list-windows --workspace "$WORKSPACE" 2>/dev/null)
 if [ -z "$WINDOWS" ]; then
 	sketchybar --animate tanh 5 --set "$NAME" \
 		label="$WORKSPACE" \
-		label.color="$RED"
+		label.font="$FONT:Bold:13.0" \
+		label.color="$COMMENT" \
+		icon.width=0 \
+		icon.padding_left=0 \
+		icon.padding_right=0 \
+		background.drawing=off
 elif [ "$WORKSPACE" = "$FOCUSED_WORKSPACE" ]; then
 	sketchybar --animate tanh 5 --set "$NAME" \
 		label="$WORKSPACE" \
-		label.color="$ORANGE"
+		label.font="$FONT:Heavy:15.0" \
+		label.color="$WHITE" \
+		icon.width=0 \
+		icon.padding_left=0 \
+		icon.padding_right=0 \
+		background.drawing=on \
+		background.color="$PURPLE" \
+		background.height=20 \
+		background.corner_radius=10
 else
 	sketchybar --animate tanh 5 --set "$NAME" \
 		label="$WORKSPACE" \
-		label.color="$COMMENT"
+		label.font="$FONT:Bold:13.0" \
+		label.color="$RED" \
+		icon.width=0 \
+		icon.padding_left=0 \
+		icon.padding_right=0 \
+		background.drawing=off
 fi
