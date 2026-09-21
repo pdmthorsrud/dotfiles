@@ -5,28 +5,14 @@ sketchybar --add event aerospace_workspace_change
 sketchybar --add item spacer.1 center \
 	--set spacer.1 background.drawing=off \
 	label.drawing=off \
-	icon.drawing=off \
-	width=90
+	width=120
 
 for sid in 1 2 3 4 5 6 7 8 9 10; do
-	case "$sid" in
-		1) icon="󰆍" ;;   # terminal
-		3) icon="󰖟" ;;   # browser
-		4) icon="󱜙" ;;   # claude (AI/robot)
-		5) icon="󰙯" ;;   # discord
-		7) icon="󰎄" ;;   # music
-		8) icon="󰭹" ;;   # chat
-		9) icon="󰇮" ;;   # mail
-		*) icon="" ;;
-	esac
 	sketchybar --add item space.$sid center \
 		--subscribe space.$sid aerospace_workspace_change \
 		--set space.$sid \
-		icon="$icon" \
-		icon.padding_left=6 \
-		icon.padding_right=2 \
 		label="$sid" \
-		label.padding_left=2 \
+		label.padding_left=8 \
 		label.padding_right=8 \
 		click_script="aerospace workspace $sid" \
 		script="$PLUGIN_DIR/aerospace.sh $sid"
@@ -45,18 +31,14 @@ sketchybar --add bracket spaces_main \
 sketchybar --add item spacer.notch center \
 	--set spacer.notch background.drawing=off \
 	label.drawing=off \
-	icon.drawing=off \
-	width=199
+	width=229
 
 for sid in 11 12 13 14 15 16 17 18 19 20; do
 	sketchybar --add item space_x.$sid center \
 		--subscribe space_x.$sid aerospace_workspace_change \
 		--set space_x.$sid \
-		icon="" \
-		icon.padding_left=6 \
-		icon.padding_right=2 \
 		label="$sid" \
-		label.padding_left=2 \
+		label.padding_left=8 \
 		label.padding_right=8 \
 		click_script="aerospace workspace $sid" \
 		script="$PLUGIN_DIR/aerospace.sh $sid"
@@ -75,5 +57,4 @@ sketchybar --add bracket spaces_extra \
 sketchybar --add item spacer.2 center \
 	--set spacer.2 background.drawing=off \
 	label.drawing=off \
-	icon.drawing=off \
 	width=55
