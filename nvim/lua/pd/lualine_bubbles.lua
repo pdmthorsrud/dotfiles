@@ -3,31 +3,36 @@
 -- MIT license, see LICENSE for more details.
 
 -- stylua: ignore
+-- Fluoromachine palette (maxmx03/fluoromachine.nvim) so the bubbles match the editor + tmux
 local colors = {
-  blue   = '#80a0ff',
-  cyan   = '#79dac8',
-  black  = '#080808',
-  white  = '#c6c6c6',
-  red    = '#ff5189',
-  violet = '#d183e8',
-  grey   = '#303030',
+  bg      = '#262335', -- editor background (bubbles float on it)
+  bgdark  = '#241B2F', -- text inside the bubbles
+  fg      = '#8BA7A7',
+  surface = '#463465', -- middle bubbles (= nvim selection / cursorline)
+  purple  = '#AF6DF9',
+  yellow  = '#FFCC00',
+  cyan    = '#61E2FF',
+  red     = '#FE4450',
+  orange  = '#FF8B39',
 }
 
+-- mode colours follow fluoromachine's own lualine theme
 local bubbles_theme = {
   normal = {
-    a = { fg = colors.black, bg = colors.violet },
-    b = { fg = colors.white, bg = colors.grey },
-    c = { fg = colors.black, bg = colors.black },
+    a = { fg = colors.bgdark, bg = colors.purple, gui = 'bold' },
+    b = { fg = colors.fg, bg = colors.surface },
+    c = { fg = colors.fg, bg = colors.bg },
   },
 
-  insert = { a = { fg = colors.black, bg = colors.blue } },
-  visual = { a = { fg = colors.black, bg = colors.cyan } },
-  replace = { a = { fg = colors.black, bg = colors.red } },
+  insert  = { a = { fg = colors.bgdark, bg = colors.yellow, gui = 'bold' } },
+  visual  = { a = { fg = colors.bgdark, bg = colors.cyan,   gui = 'bold' } },
+  replace = { a = { fg = colors.bgdark, bg = colors.red,    gui = 'bold' } },
+  command = { a = { fg = colors.bgdark, bg = colors.orange, gui = 'bold' } },
 
   inactive = {
-    a = { fg = colors.white, bg = colors.black },
-    b = { fg = colors.white, bg = colors.black },
-    c = { fg = colors.black, bg = colors.black },
+    a = { fg = colors.fg, bg = colors.bg },
+    b = { fg = colors.fg, bg = colors.bg },
+    c = { fg = colors.fg, bg = colors.bg },
   },
 }
 
