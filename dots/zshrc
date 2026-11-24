@@ -1,9 +1,14 @@
+# Record shell startup time (must be first line)
+_zsh_startup_start=${EPOCHREALTIME}
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
+export SSH_AUTH_SOCK=/Users/per.thorsrud/.bitwarden-ssh-agent.sock
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
@@ -144,6 +149,14 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # ============================================
 export NVM_DIR="$HOME/.nvm"
 
+# Put node on PATH so non-shell tools (Neovim/Mason) can find npm
+# (follows the nvm default alias; falls back to the newest installed version)
+_nvm_default="$(<"$NVM_DIR/alias/default" 2>/dev/null)"
+_nvm_node=( "$NVM_DIR"/versions/node/v${_nvm_default#v}*(N-/On[1]) )
+[[ -z $_nvm_node ]] && _nvm_node=( "$NVM_DIR"/versions/node/v*(N-/On[1]) )
+[[ -n $_nvm_node ]] && export PATH="${_nvm_node[1]}/bin:$PATH"
+unset _nvm_default _nvm_node
+
 _load_nvm() {
   unset -f nvm node npm npx yarn pnpm bun
   [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
@@ -174,3 +187,17 @@ pnpm() { _load_nvm; pnpm "$@"; }
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
 export PATH="$HOME/.local/bin:$PATH"
 [[ -f "$HOME/.mac-ca-roots" ]] && export CURL_CA_BUNDLE="$HOME/.mac-ca-roots"
+
+# ============================================
+# Startup Timer
+# ============================================
+_zsh_startup_timer_precmd() {
+  printf "Shell startup: %.0fms\n" $(( (EPOCHREALTIME - _zsh_startup_start) * 1000 ))
+  unset _zsh_startup_start
+  add-zsh-hook -d precmd _zsh_startup_timer_precmd
+  unset -f _zsh_startup_timer_precmd
+}
+add-zsh-hook precmd _zsh_startup_timer_precmd
+
+# Time a new shell session (run multiple times for a stable reading)
+alias timezsh='for i in $(seq 1 5); do time zsh -i -c exit; done'

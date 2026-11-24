@@ -137,14 +137,16 @@ return {
         config = function()
             require("conform").setup({
                 formatters_by_ft = {
-                    sql = { "sql_formatter" },
                     python = { "ruff_format" },
                     lua = { "stylua" },
                 },
-                format_on_save = {
-                    timeout_ms = 500,
-                    lsp_format = "fallback",
-                },
+                format_on_save = function(bufnr)
+                    -- No SQL formatting (dbt/Jinja); also blocks LSP fallback
+                    if vim.bo[bufnr].filetype == "sql" then
+                        return
+                    end
+                    return { timeout_ms = 5000, lsp_format = "fallback" }
+                end,
             })
         end,
     },
