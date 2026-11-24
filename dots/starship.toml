@@ -1,0 +1,88 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Starship port of the Powerlevel10k prompt in p10k.zsh, in Rosé Pine (main).
+# Palette: the first seven entries are verbatim from github.com/rose-pine/starship
+# (rose-pine.toml); text, muted and frame are my own additions to the same table.
+# (The palette table must stay at the end: top-level keys have to come before any table.)
+#
+# Layout (same as before):
+#   ╭─  ~/p/some-repo on  branch ─────────────── 3.13 took 5s at  13:36:01 ─╮
+#   ╰─❯ command                                                              ─╯
+
+palette = "rose-pine"
+
+add_newline = true
+
+format = """
+[╭─](frame) $os$directory$git_branch$git_status$fill $python$cmd_duration$time[─╮](frame)
+[╰─](frame)$character"""
+
+right_format = "[─╯](frame)"
+
+[fill]
+symbol = "─"
+style = "frame"
+
+[os]
+disabled = false
+format = "[$symbol]($style) "
+style = "text"
+
+[os.symbols]
+Macos = ""
+
+[directory]
+style = "foam"
+format = "[$path]($style)[$read_only]($read_only_style) "
+read_only = " "
+read_only_style = "gold"
+truncation_length = 1
+truncate_to_repo = false
+fish_style_pwd_dir_length = 1
+
+[git_branch]
+symbol = " "
+style = "foam"
+format = "on [$symbol$branch]($style) "
+
+[git_status]
+style = "gold"
+format = '([$all_status$ahead_behind]($style) )'
+
+[python]
+symbol = " "
+style = "iris"
+version_format = "${major}.${minor}"
+format = '[$symbol$version]($style) '
+
+[cmd_duration]
+min_time = 3000
+style = "gold"
+format = "took [$duration]($style) "
+
+[time]
+disabled = false
+time_format = "%H:%M:%S"
+style = "muted"
+format = "at [ $time]($style) "
+
+[character]
+success_symbol = "[❯](rose)"
+error_symbol = "[❯](love)"
+vimcmd_symbol = "[❮](rose)"
+vimcmd_replace_one_symbol = "[▶](iris)"
+vimcmd_replace_symbol = "[▶](iris)"
+vimcmd_visual_symbol = "[V](gold)"
+
+[palettes.rose-pine]
+overlay = '#26233a'
+love = '#eb6f92'
+gold = '#f6c177'
+rose = '#ebbcba'
+pine = '#31748f'
+foam = '#9ccfd8'
+iris = '#c4a7e7'
+# not in the official file:
+text = '#e0def4'
+muted = '#6e6a86'
+frame = '#403d52' # highlight_med, used for the box-drawing frame

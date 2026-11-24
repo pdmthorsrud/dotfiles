@@ -3,20 +3,21 @@
 -- MIT license, see LICENSE for more details.
 
 -- stylua: ignore
--- Fluoromachine palette (maxmx03/fluoromachine.nvim) so the bubbles match the editor + tmux
+-- Rosé Pine palette so the bubbles match the editor + tmux (names kept from the
+-- fluoromachine version: purple=iris, yellow=gold, cyan=foam, red=love, orange=rose)
 local colors = {
-  bg      = '#262335', -- editor background (bubbles float on it)
-  bgdark  = '#241B2F', -- text inside the bubbles
-  fg      = '#8BA7A7',
-  surface = '#463465', -- middle bubbles (= nvim selection / cursorline)
-  purple  = '#AF6DF9',
-  yellow  = '#FFCC00',
-  cyan    = '#61E2FF',
-  red     = '#FE4450',
-  orange  = '#FF8B39',
+  bg      = '#191724', -- editor background (bubbles float on it)
+  bgdark  = '#191724', -- text inside the bubbles
+  fg      = '#908caa',
+  surface = '#403d52', -- middle bubbles (= nvim selection / cursorline)
+  purple  = '#c4a7e7',
+  yellow  = '#f6c177',
+  cyan    = '#9ccfd8',
+  red     = '#eb6f92',
+  orange  = '#ebbcba',
 }
 
--- mode colours follow fluoromachine's own lualine theme
+-- mode colours: iris normal, gold insert, foam visual, love replace, rose command
 local bubbles_theme = {
   normal = {
     a = { fg = colors.bgdark, bg = colors.purple, gui = 'bold' },

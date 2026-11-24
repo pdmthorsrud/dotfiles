@@ -1,0 +1,7 @@
+#!/opt/homebrew/bin/lua
+
+-- SbarLua lives here after `make install` (FelixKratz/SbarLua)
+package.cpath = package.cpath .. ";" .. os.getenv("HOME") .. "/.local/share/sketchybar_lua/?.so"
+package.path = package.path .. ";" .. os.getenv("HOME") .. "/.config/sketchybar/?.lua"
+
+require("init")
