@@ -87,7 +87,18 @@ return {
     },
     'glepnir/zephyr-nvim',
     "nvim-tree/nvim-web-devicons",
-    { 'rose-pine/neovim', name = 'rose-pine' },
+    {
+        'rose-pine/neovim',
+        name = 'rose-pine',
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require('rose-pine').setup({
+                variant = 'main',
+                styles = { transparency = false },
+            })
+        end,
+    },
     {
         "andrewferrier/wrapping.nvim",
         config = function()
