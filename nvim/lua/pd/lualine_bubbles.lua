@@ -3,31 +3,37 @@
 -- MIT license, see LICENSE for more details.
 
 -- stylua: ignore
+-- Rosé Pine palette so the bubbles match the editor + tmux (names kept from the
+-- fluoromachine version: purple=iris, yellow=gold, cyan=foam, red=love, orange=rose)
 local colors = {
-  blue   = '#80a0ff',
-  cyan   = '#79dac8',
-  black  = '#080808',
-  white  = '#c6c6c6',
-  red    = '#ff5189',
-  violet = '#d183e8',
-  grey   = '#303030',
+  bg      = '#191724', -- editor background (bubbles float on it)
+  bgdark  = '#191724', -- text inside the bubbles
+  fg      = '#908caa',
+  surface = '#403d52', -- middle bubbles (= nvim selection / cursorline)
+  purple  = '#c4a7e7',
+  yellow  = '#f6c177',
+  cyan    = '#9ccfd8',
+  red     = '#eb6f92',
+  orange  = '#ebbcba',
 }
 
+-- mode colours: iris normal, gold insert, foam visual, love replace, rose command
 local bubbles_theme = {
   normal = {
-    a = { fg = colors.black, bg = colors.violet },
-    b = { fg = colors.white, bg = colors.grey },
-    c = { fg = colors.black, bg = colors.black },
+    a = { fg = colors.bgdark, bg = colors.purple, gui = 'bold' },
+    b = { fg = colors.fg, bg = colors.surface },
+    c = { fg = colors.fg, bg = colors.bg },
   },
 
-  insert = { a = { fg = colors.black, bg = colors.blue } },
-  visual = { a = { fg = colors.black, bg = colors.cyan } },
-  replace = { a = { fg = colors.black, bg = colors.red } },
+  insert  = { a = { fg = colors.bgdark, bg = colors.yellow, gui = 'bold' } },
+  visual  = { a = { fg = colors.bgdark, bg = colors.cyan,   gui = 'bold' } },
+  replace = { a = { fg = colors.bgdark, bg = colors.red,    gui = 'bold' } },
+  command = { a = { fg = colors.bgdark, bg = colors.orange, gui = 'bold' } },
 
   inactive = {
-    a = { fg = colors.white, bg = colors.black },
-    b = { fg = colors.white, bg = colors.black },
-    c = { fg = colors.black, bg = colors.black },
+    a = { fg = colors.fg, bg = colors.bg },
+    b = { fg = colors.fg, bg = colors.bg },
+    c = { fg = colors.fg, bg = colors.bg },
   },
 }
 
