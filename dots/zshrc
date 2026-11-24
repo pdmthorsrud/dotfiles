@@ -202,3 +202,4 @@ add-zsh-hook precmd _zsh_startup_timer_precmd
 
 # Time a new shell session (run multiple times for a stable reading)
 alias timezsh='for i in $(seq 1 5); do time zsh -i -c exit; done'
+alias ks='cd ~/projects/ks-data-dbt'
