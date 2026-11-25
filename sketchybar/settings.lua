@@ -9,8 +9,8 @@ return {
 
   -- Alternatively, this is a font config for JetBrainsMono Nerd Font
   font = {
-    text = "Monaspace Neon Var", -- Used for text
-    numbers = "Monaspace Neon Var", -- Used for numbers
+    text = "Monaspace Neon", -- Used for text
+    numbers = "Monaspace Neon", -- Used for numbers
     space_numbers = "Maple Mono NF",
     icons = "FiraCode Nerd Font", -- own addition: font for icon glyphs (installed)
     style_map = {
